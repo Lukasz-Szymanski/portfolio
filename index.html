@@ -25,27 +25,30 @@
   <body>
     <!-- Navbar -->
     <ul id="navbar" class="nav justify-content-evenly m-5">
-      <a class="navbar-brand m-1" href="#">
-        <img src="./src/images/logo_bgd.png" alt="logo" width="25" href="nav" />
+      <a class="navbar-brand m-1" href="#main" id="mainBtn">
+        <img
+          src="./src/images/logo_bgd.png"
+          alt="logo"
+          width="25" />
       </a>
-      <li class="nav-item">
+      <li class="nav-item" id="aboutBtn">
         <a class="nav-link text-black" href="#about">About</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="musicianBtn">
         <a class="nav-link text-black" href="#musician">Musician</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="programmerBtn">
         <a class="nav-link text-black" href="#programmer">Programmer</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="filmmakerBtn">
         <a class="nav-link text-black" href="#filmmaker">Filmmaker</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="contactBtn">
         <a class="nav-link text-black" href="#contact">Contact</a>
       </li>
     </ul>
-    <!-- about -->
-    <section id="about" style="margin: 10rem auto; padding: 0 12rem 0 12rem">
+    <!-- main -->
+    <main id="main" style="margin: 15rem auto; padding: 0 12rem 0 12rem">
       <div style="margin: 25px">
         <div class="row g-5">
           <div class="col-md-4">
@@ -67,12 +70,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
+    <!-- about -->
+    <section id="about"></section>
     <!-- musician -->
     <section id="musician"></section>
     <!-- programmer -->
     <section id="programmer">
-      <div class="container-fluid"></div>
+      <div class="container-fluid">
     </section>
     <!-- filmmaker -->
     <section id="filmmaker">
@@ -119,6 +124,6 @@
         </a>
       </div>
     </footer>
-    <script src="./script/script.js"></script>
+    <script src="./src/script/script.js"></script>
   </body>
 </html>
