@@ -38,6 +38,7 @@ filmmakerBtn.addEventListener("click", function () {
 contactBtn.addEventListener("click", function () {
   showContact();
 });
+
 // create functions for displaying sections
 
 function showMain() {
@@ -94,6 +95,7 @@ function showContact() {
   contactSection.style.display = "block";
 }
 
+// window display
 window.onload = () => {
   showMain();
 };
