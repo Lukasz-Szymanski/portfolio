@@ -1,101 +1,45 @@
-// variables for display
+// Collect sections in one variable
+const sections = {
+  main: document.getElementById("main"),
+  about: document.getElementById("about"),
+  musician: document.getElementById("musician"),
+  programmer: document.getElementById("programmer"),
+  filmmaker: document.getElementById("filmmaker"),
+  contact: document.getElementById("contact"),
+};
 
-const mainSection = document.getElementById("main");
-const aboutSection = document.getElementById("about");
-const musicianSection = document.getElementById("musician");
-const programmerSection = document.getElementById("programmer");
-const filmmakerSection = document.getElementById("filmmaker");
-const contactSection = document.getElementById("contact");
+// Collect buttons in one variable
+const buttons = {
+  mainBtn: document.getElementById("mainBtn"),
+  aboutBtn: document.getElementById("aboutBtn"),
+  musicianBtn: document.getElementById("musicianBtn"),
+  programmerBtn: document.getElementById("programmerBtn"),
+  filmmakerBtn: document.getElementById("filmmakerBtn"),
+  contactBtn: document.getElementById("contactBtn"),
+};
 
-// variables for buttons
-const mainBtn = document.getElementById("mainBtn");
-const aboutBtn = document.getElementById("aboutBtn");
-const musicianBtn = document.getElementById("musicianBtn");
-const programmerBtn = document.getElementById("programmerBtn");
-const filmmakerBtn = document.getElementById("filmmakerBtn");
-const contactBtn = document.getElementById("contactBtn");
-
-//  buttons actions
-mainBtn.addEventListener("click", function () {
-  showMain();
-});
-aboutBtn.addEventListener("click", function () {
-  showAbout();
-});
-
-musicianBtn.addEventListener("click", function () {
-  showMusician();
-});
-
-programmerBtn.addEventListener("click", function () {
-  showProgrammer();
-});
-
-filmmakerBtn.addEventListener("click", function () {
-  showFilmmaker();
-});
-
-contactBtn.addEventListener("click", function () {
-  showContact();
-});
-
-// create functions for displaying sections
-
-function showMain() {
-  mainSection.style.display = "block";
-  aboutSection.style.display = "none";
-  musicianSection.style.display = "none";
-  programmerSection.style.display = "none";
-  filmmakerSection.style.display = "none";
-  contactSection.style.display = "none";
+// Hide all sections
+function hideAllSections() {
+  for (const section in sections) {
+    sections[section].style.display = "none";
+  }
 }
 
-function showAbout() {
-  mainSection.style.display = "none";
-  aboutSection.style.display = "block";
-  musicianSection.style.display = "none";
-  programmerSection.style.display = "none";
-  filmmakerSection.style.display = "none";
-  contactSection.style.display = "none";
+// Show the selected section
+function showSection(sectionId) {
+  hideAllSections();
+  sections[sectionId].style.display = "block";
 }
 
-function showMusician() {
-  mainSection.style.display = "none";
-  aboutSection.style.display = "none";
-  musicianSection.style.display = "block";
-  programmerSection.style.display = "none";
-  filmmakerSection.style.display = "none";
-  contactSection.style.display = "none";
+// Add event listeners to buttons
+for (const btnId in buttons) {
+  buttons[btnId].addEventListener("click", function (event) {
+    const sectionId = btnId.replace("Btn", ""); // Remove "Btn" from button id
+    showSection(sectionId);
+  });
 }
 
-function showProgrammer() {
-  mainSection.style.display = "none";
-  aboutSection.style.display = "none";
-  musicianSection.style.display = "none";
-  programmerSection.style.display = "block";
-  filmmakerSection.style.display = "none";
-  contactSection.style.display = "none";
-}
-
-function showFilmmaker() {
-  mainSection.style.display = "none";
-  aboutSection.style.display = "none";
-  musicianSection.style.display = "none";
-  programmerSection.style.display = "none";
-  filmmakerSection.style.display = "block";
-  contactSection.style.display = "none";
-}
-
-function showContact() {
-  mainSection.style.display = "none";
-  aboutSection.style.display = "none";
-  musicianSection.style.display = "none";
-  programmerSection.style.display = "none";
-  filmmakerSection.style.display = "none";
-  contactSection.style.display = "block";
-}
-
-// window display
+// Show the "main" section upon page load
 window.onload = () => {
-  showMain();
+  showSection("main");
 };
