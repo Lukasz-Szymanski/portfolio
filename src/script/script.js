@@ -1,7 +1,6 @@
 // Collect sections in one variable
 const sections = {
   main: document.getElementById("main"),
-  about: document.getElementById("about"),
   musician: document.getElementById("musician"),
   programmer: document.getElementById("programmer"),
   filmmaker: document.getElementById("filmmaker"),
@@ -11,7 +10,6 @@ const sections = {
 // Collect buttons in one variable
 const buttons = {
   mainBtn: document.getElementById("mainBtn"),
-  aboutBtn: document.getElementById("aboutBtn"),
   musicianBtn: document.getElementById("musicianBtn"),
   programmerBtn: document.getElementById("programmerBtn"),
   filmmakerBtn: document.getElementById("filmmakerBtn"),
@@ -41,5 +39,5 @@ for (const btnId in buttons) {
 
 // Show the "main" section upon page load
 window.onload = () => {
-  showSection("about");
+  showSection("musician");
 };
