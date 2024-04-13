@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-#navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
+.nav-link,
+.navbar-brand img {
+  cursor: pointer;
 }
