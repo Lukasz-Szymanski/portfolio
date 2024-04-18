@@ -13,3 +13,7 @@
 .navbar-brand img {
   cursor: pointer;
 }
+
+.col p {
+  text-align: justify;
+}
