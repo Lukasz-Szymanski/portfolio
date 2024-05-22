@@ -4,7 +4,7 @@ const sections = {
   musician: document.getElementById("musician"),
   programmer: document.getElementById("programmer"),
   filmmaker: document.getElementById("filmmaker"),
-  contact: document.getElementById("contact"),
+  // contact: document.getElementById("contact"),
 };
 
 // Collect buttons in one variable
@@ -13,7 +13,7 @@ const buttons = {
   musicianBtn: document.getElementById("musicianBtn"),
   programmerBtn: document.getElementById("programmerBtn"),
   filmmakerBtn: document.getElementById("filmmakerBtn"),
-  contactBtn: document.getElementById("contactBtn"),
+  // contactBtn: document.getElementById("contactBtn"),
 };
 
 // Hide all sections
