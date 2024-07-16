@@ -39,5 +39,5 @@ for (const btnId in buttons) {
 
 // Show the "main" section upon page load
 window.onload = () => {
-  showSection("main");
+  showSection("musician");
 };
