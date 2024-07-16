@@ -25,6 +25,7 @@ function hideAllSections() {
 
 // Show the selected section
 function showSection(sectionId) {
+  console.log(`Showing section: ${sectionId}`);
   hideAllSections();
   sections[sectionId].style.display = "block";
 }
@@ -33,6 +34,7 @@ function showSection(sectionId) {
 for (const btnId in buttons) {
   buttons[btnId].addEventListener("click", function (event) {
     const sectionId = btnId.replace("Btn", ""); // Remove "Btn" from button id
+    console.log(`Button clicked: ${btnId}, showing section: ${sectionId}`);
     showSection(sectionId);
   });
 }
