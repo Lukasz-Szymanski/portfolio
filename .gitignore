@@ -1,0 +1,17 @@
+﻿# Standard ignores
+node_modules/
+.venv/
+venv/
+bin/
+obj/
+target/
+.idea/
+.vscode/
+*.suo
+*.user
+*.log
+dist/
+build/
+out/
+.DS_Store
+Thumbs.db
