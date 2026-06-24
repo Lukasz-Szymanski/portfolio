@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Code } from '@lucide/astro';
+---
+
+<Layout title="Programmer" hideScroll={true}>
+  
+  <section class="max-w-5xl mx-auto px-6 flex-grow w-full flex items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full min-w-0">
+      
+      <!-- Left Column: Huge Apple Slogan with Gradient -->
+      <div class="space-y-4 min-w-0">
+        <div class="inline-flex items-center gap-2 text-blue-500">
+          <Code class="h-4 w-4" />
+          <span class="text-2xs font-semibold uppercase tracking-widest">Logic & Systems</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words">
+          Security-first logic.<br />Responsive layouts.
+        </h1>
+      </div>
+
+      <!-- Right Column: Biography Content in Editorial style -->
+      <div class="max-h-[75vh] overflow-y-auto pr-4 space-y-8 font-sans min-w-0">
+        
+        <div class="space-y-4">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">My IT Journey</h2>
+          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
+            <p>
+              Entered the programming space as an autodidact, starting with cybersecurity coursework. This analytical base instilled a security-oriented development mindset that guides my architectural designs.
+            </p>
+            <p>
+              Built and launched responsive and highly accessible web landing pages for <span class="text-white">pediatric and neurology clinics</span>, improving page load speeds, SEO mappings, and overall user flow.
+            </p>
+          </div>
+        </div>
+
+        <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
+
+        <div class="space-y-4">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Mentorship & Backend</h2>
+          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
+            <p>
+              Joined the <span class="text-white">"Za Rączkę"</span> mentorship program in March 2024 to transition into backend development, clean data schemas, and server performance.
+            </p>
+            <p>
+              Focusing on fullstack development allows me to connect clean UI layouts with solid backend performance. I emphasize clean, maintainable, and type-safe systems that compile and scale reliably.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Cpu, Music, Code, Globe, ExternalLink, Sparkles } from '@lucide/astro';
+
+const featuredProjects = [
+  {
+    title: "Young Ludwig Youth Music Competition",
+    description: "Official multi-language web platform featuring optimized image delivery, smooth page transitions, client routing, and custom cookie consent banner.",
+    tech: ["Astro", "Tailwind CSS", "TypeScript", "i18n"],
+    github: "https://github.com/Lukasz-Szymanski/Young_Ludwig",
+    icon: Globe
+  },
+  {
+    title: "Neurolog Dziecięcy Portal",
+    description: "Professional landing page for a pediatric neurologist appointment clinic designed for maximum accessibility, readability, and performance.",
+    tech: ["HTML5", "Tailwind CSS", "Vanilla JS"],
+    github: "https://github.com/Lukasz-Szymanski/Neurolog_Dzieciecy",
+    icon: Cpu
+  },
+  {
+    title: "A-vista Music sight-reading app",
+    description: "Interactive learning web app that randomly generates images of fragments of orchestral and solo classical works to help musicians practice sight-reading.",
+    tech: ["JavaScript", "CSS3", "Random Generator"],
+    github: "https://github.com/Lukasz-Szymanski/A-vista",
+    icon: Music
+  },
+  {
+    title: "Git Sensei CLI Companion",
+    description: "A developer CLI helper utility that analyzes git diffs and uses local AI models to write precise, context-aware commit messages automatically.",
+    tech: ["TypeScript", "Node.js", "AI Integration"],
+    github: "https://github.com/Lukasz-Szymanski/git_sensei",
+    icon: Code
+  }
+];
+---
+
+<Layout title="Projects" hideScroll={true}>
+  
+  <section class="max-w-5xl mx-auto px-6 flex-grow w-full flex flex-col justify-center space-y-6 py-8">
+    <!-- Header -->
+    <div class="space-y-2 text-center max-w-xl mx-auto flex-shrink-0">
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-2xs font-semibold uppercase tracking-wider">
+        <Sparkles class="h-3 w-3" /> Code & Design
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+        Projects Showcase
+      </h1>
+      <p class="text-xs text-[var(--color-text-secondary)] leading-relaxed">
+        Software, tools, and websites built with modern web technologies.
+      </p>
+    </div>
+
+    <!-- Tight 2x2 Grid that fits entirely within the screen height without scrolling -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto w-full select-none">
+      {featuredProjects.map(proj => {
+        const Icon = proj.icon;
+        return (
+          <div class="group relative bg-[var(--color-bg-card)] border border-[var(--color-border-apple)]/30 hover:border-blue-500/40 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:scale-[1.01] hover:shadow-lg">
+            <div class="space-y-2">
+              <div class="flex justify-between items-start">
+                <div class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                  <Icon class="h-4 w-4" />
+                </div>
+                <a href={proj.github} target="_blank" aria-label="View Github repository" class="p-1 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+                  <ExternalLink class="h-3.5 w-3.5" />
+                </a>
+              </div>
+              <h2 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors leading-snug">{proj.title}</h2>
+              <p class="text-2xs text-[var(--color-text-secondary)] leading-relaxed">{proj.description}</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-1 pt-4">
+              {proj.tech.map(t => (
+                <span class="px-2 py-0.5 text-2xs font-medium rounded-full bg-blue-950/20 text-blue-400 border border-blue-500/10">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </section>
+
+</Layout>

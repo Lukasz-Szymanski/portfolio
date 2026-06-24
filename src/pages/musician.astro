@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Music } from '@lucide/astro';
+---
+
+<Layout title="Musician" hideScroll={true}>
+  
+  <section class="max-w-5xl mx-auto px-6 flex-grow w-full flex items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full min-w-0">
+      
+      <!-- Left Column: Huge Apple Slogan with Gradient -->
+      <div class="space-y-4 min-w-0">
+        <div class="inline-flex items-center gap-2 text-blue-500">
+          <Music class="h-4 w-4" />
+          <span class="text-2xs font-semibold uppercase tracking-widest">Acoustic Art</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words">
+          Designed to perform.<br />Created to teach.
+        </h1>
+      </div>
+
+      <!-- Right Column: Biography Content in Editorial style -->
+      <div class="max-h-[75vh] overflow-y-auto pr-4 space-y-8 font-sans min-w-0">
+        
+        <div class="space-y-4">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Performances & Orchestras</h2>
+          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
+            <p>
+              Years of stage performance on Polish and European stages. Collaborated with outstanding conductors and classical chamber players to deliver classical masterworks.
+            </p>
+            <p>
+              Since 2018, active player at the <span class="text-white">Classical Music Festival</span> in Eisenstadt, Austria. Collaborated with the <span class="text-white">Splitzki Virtuozi</span> chamber orchestra, performing concerts across Split, Zadar, and Dubrovnik.
+            </p>
+          </div>
+        </div>
+
+        <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
+
+        <div class="space-y-4">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Teaching Philosophy</h2>
+          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
+            <p>
+              Imparting musical knowledge, physical violin techniques, and artistic insights in a supportive educational environment. Fostering a deep appreciation for acoustic music among young violinists.
+            </p>
+            <p>
+              Empowering aspiring musicians, structuring their daily practice routines, and helping them find their unique creative voice on their artistic journey.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

@@ -1,40 +1,43 @@
-# Łukasz Szymański Portfolio
+# Astro Starter Kit: Minimal
 
-Welcome to my personal website repository. Here, I'll walk you through the technologies I've used, where it's hosted, and what you can find on the site.
+```sh
+npm create astro@latest -- --template minimal
+```
 
-## Technologies I Use
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-- HTML: I use these for structuring the website.
-- TailwindCSS: U use these for styling website
-- JavaScript: It adds interactivity and makes the content dynamic.
-- Netlify: My site is hosted on Netlify, which offers easy deployment from Git, continuous integration, and a global content delivery network.
+## 🚀 Project Structure
 
+Inside of your Astro project, you'll see the following folders and files:
 
-## Hosting
-My website is hosted on Netlify. This platform allows seamless deployment from my Git repository and ensures my site benefits from a global content delivery network.
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-### Content Overview
-Home Page
+Any static assets, like images, can be placed in the `public/` directory.
 
-Introduction: I introduce myself as a multi-talented individual who's passionate about coding, music, and video production.
-Profile: I highlight my journey and experiences in music, programming, and filmmaking.
-Music Section
+## 🧞 Commands
 
-Experience: I detail my extensive stage experience and collaborations with musicians and orchestras.
-Teaching: I focus on my role as a music teacher and my commitment to nurturing young musicians.
-Programming Section
+All commands are run from the root of the project, from a terminal:
 
-Journey: I share my journey into programming, starting with cybersecurity and moving towards frontend and backend development.
-Projects: I describe significant projects, including websites I've built for healthcare professionals.
-Filmmaking Section
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-Passion: I express my enthusiasm for video creation, emphasizing storytelling through visual media.
-Skills: I discuss my expertise in filming, editing techniques, and collaboration in video production projects.
+## 👀 Want to learn more?
 
-### License
-This project is licensed under the MIT License. You can find details in the LICENSE file.
-
-### Contact
-For more information, visit my website or connect with me on LinkedIn.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
