@@ -1,13 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Music } from '@lucide/astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Layout from '../../layouts/Layout.astro';
+import { Film } from '@lucide/astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Musician">
+<Layout title="Filmmaker">
   
   <section class="max-w-5xl mx-auto px-6 flex-grow w-full flex items-center">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full min-w-0">
@@ -15,10 +15,10 @@ const t = useTranslations(lang);
       <!-- Left Column: Huge Apple Slogan with Gradient -->
       <div class="space-y-4 min-w-0">
         <div class="inline-flex items-center gap-2 text-blue-500">
-          <Music class="h-4 w-4" />
-          <span class="text-2xs font-semibold uppercase tracking-widest">{t('musician.tag')}</span>
+          <Film class="h-4 w-4" />
+          <span class="text-2xs font-semibold uppercase tracking-widest">{t('filmmaker.tag')}</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('musician.title')}>
+        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('filmmaker.title')}>
         </h1>
       </div>
 
@@ -26,13 +26,13 @@ const t = useTranslations(lang);
       <div class="space-y-8 font-sans min-w-0 py-12">
         
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('musician.h1')}</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('filmmaker.h1')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              {t('musician.p1')}
+              {t('filmmaker.p1')}
             </p>
             <p>
-              {t('musician.p2_1')}<span class="text-white">{t('musician.p2_2')}</span>{t('musician.p2_3')}<span class="text-white">{t('musician.p2_4')}</span>{t('musician.p2_5')}
+              {t('filmmaker.p2')}
             </p>
           </div>
         </div>
@@ -40,13 +40,13 @@ const t = useTranslations(lang);
         <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
 
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('musician.h2')}</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('filmmaker.h2')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              {t('musician.p3')}
+              {t('filmmaker.p3')}
             </p>
             <p>
-              {t('musician.p4')}
+              {t('filmmaker.p4')}
             </p>
           </div>
         </div>

@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Film } from '@lucide/astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title="Filmmaker">
@@ -12,10 +16,9 @@ import { Film } from '@lucide/astro';
       <div class="space-y-4 min-w-0">
         <div class="inline-flex items-center gap-2 text-blue-500">
           <Film class="h-4 w-4" />
-          <span class="text-2xs font-semibold uppercase tracking-widest">Visual Frame</span>
+          <span class="text-2xs font-semibold uppercase tracking-widest">{t('filmmaker.tag')}</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words">
-          Stories in motion.<br />Graded with precision.
+        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('filmmaker.title')}>
         </h1>
       </div>
 
@@ -23,13 +26,13 @@ import { Film } from '@lucide/astro';
       <div class="space-y-8 font-sans min-w-0 py-12">
         
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Cinematic Passion</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('filmmaker.h1')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              Expressing storytelling through cinematic framing, lighting setups, and pacing. Video creation allows me to bridge technical filming skills with high-impact visual design.
+              {t('filmmaker.p1')}
             </p>
             <p>
-              Handling all phases of production, from initial camera configurations to color grading in post-production. Experimenting with visual flow to capture authentic emotion in every sequence.
+              {t('filmmaker.p2')}
             </p>
           </div>
         </div>
@@ -37,13 +40,13 @@ import { Film } from '@lucide/astro';
         <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
 
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Formats & Cooperation</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('filmmaker.h2')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              Collaborating with screenwriters, sound designers, and directors to deliver unified visual projects.
+              {t('filmmaker.p3')}
             </p>
             <p>
-              My portfolio includes music videos, promotional content, short-form documentaries, and commercial content. Exploring diverse formats keeps my creative cinematography fresh and engaging.
+              {t('filmmaker.p4')}
             </p>
           </div>
         </div>

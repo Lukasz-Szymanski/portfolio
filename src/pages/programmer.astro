@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Code } from '@lucide/astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title="Programmer">
@@ -12,10 +16,9 @@ import { Code } from '@lucide/astro';
       <div class="space-y-4 min-w-0">
         <div class="inline-flex items-center gap-2 text-blue-500">
           <Code class="h-4 w-4" />
-          <span class="text-2xs font-semibold uppercase tracking-widest">Logic & Systems</span>
+          <span class="text-2xs font-semibold uppercase tracking-widest">{t('programmer.tag')}</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words">
-          Security-first logic.<br />Responsive layouts.
+        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('programmer.title')}>
         </h1>
       </div>
 
@@ -23,13 +26,13 @@ import { Code } from '@lucide/astro';
       <div class="space-y-8 font-sans min-w-0 py-12">
         
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">My IT Journey</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('programmer.h1')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              Entered the programming space as an autodidact, starting with cybersecurity coursework. This analytical base instilled a security-oriented development mindset that guides my architectural designs.
+              {t('programmer.p1')}
             </p>
             <p>
-              Built and launched responsive and highly accessible web landing pages for <span class="text-white">pediatric and neurology clinics</span>, improving page load speeds, SEO mappings, and overall user flow.
+              {t('programmer.p2_1')}<span class="text-white">{t('programmer.p2_2')}</span>{t('programmer.p2_3')}
             </p>
           </div>
         </div>
@@ -37,13 +40,13 @@ import { Code } from '@lucide/astro';
         <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
 
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Mentorship & Backend</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('programmer.h2')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              Joined the <span class="text-white">"Za Rączkę"</span> mentorship program in March 2024 to transition into backend development, clean data schemas, and server performance.
+              {t('programmer.p3_1')}<span class="text-white">{t('programmer.p3_2')}</span>{t('programmer.p3_3')}
             </p>
             <p>
-              Focusing on fullstack development allows me to connect clean UI layouts with solid backend performance. I emphasize clean, maintainable, and type-safe systems that compile and scale reliably.
+              {t('programmer.p4')}
             </p>
           </div>
         </div>

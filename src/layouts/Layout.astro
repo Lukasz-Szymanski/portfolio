@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { getLangFromUrl, useTranslations, getRouteFromUrl } from '../i18n/utils';
 
 interface Props {
   title: string;
@@ -9,10 +10,13 @@ interface Props {
 
 const { title, description = "Welcome to Łukasz Szymański's portfolio website! I am a classical musician, programmer, and filmmaker.", hideScroll = false } = Astro.props;
 const currentPath = Astro.url.pathname;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const route = getRouteFromUrl(Astro.url) || '/';
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +26,25 @@ const currentPath = Astro.url.pathname;
     <meta name="author" content="Łukasz Szymański" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <title>{title} | Łukasz Szymański</title>
+
+    <link rel="alternate" href={new URL(route, Astro.site || Astro.url.origin).href} hreflang="en" />
+    <link rel="alternate" href={new URL(`/pl${route === '/' ? '/' : route}`, Astro.site || Astro.url.origin).href} hreflang="pl" />
+    
+    <script define:vars={{ currentLang: lang, currentRoute: route }}>
+      // Smart Routing for language detection
+      const storedLang = localStorage.getItem('user-lang');
+      
+      if (!storedLang) {
+        const browserLang = navigator.language.toLowerCase();
+        if (browserLang.startsWith('pl') && currentLang !== 'pl') {
+          localStorage.setItem('user-lang', 'pl');
+          window.location.replace('/pl' + (currentRoute === '/' ? '/' : currentRoute));
+        } else if (!browserLang.startsWith('pl') && currentLang !== 'en') {
+          localStorage.setItem('user-lang', 'en');
+          window.location.replace(currentRoute);
+        }
+      }
+    </script>
   </head>
   <body class={`text-[var(--color-text-primary)] min-h-screen flex flex-col font-sans antialiased overflow-x-hidden selection:bg-blue-500/30 selection:text-blue-200 bg-transparent ${hideScroll ? 'h-screen overflow-hidden' : ''}`}>
     
@@ -51,13 +74,18 @@ const currentPath = Astro.url.pathname;
 
         <!-- Desktop Nav (Apple style: small, centered text, clean spacing) -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="/" class={`text-xs font-normal transition-colors duration-200 ${currentPath === '/' ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>Home</a>
-          <a href="/musician" class={`text-xs font-normal transition-colors duration-200 ${currentPath === '/musician' || currentPath === '/musician/' ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>Musician</a>
-          <a href="/programmer" class={`text-xs font-normal transition-colors duration-200 ${currentPath === '/programmer' || currentPath === '/programmer/' ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>Programmer</a>
-          <a href="/filmmaker" class={`text-xs font-normal transition-colors duration-200 ${currentPath === '/filmmaker' || currentPath === '/filmmaker/' ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>Filmmaker</a>
-          <a href="/film-music" class={`text-xs font-normal transition-colors duration-200 ${currentPath === '/film-music' || currentPath === '/film-music/' ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>Film Music</a>
-          <a href="/projects" class={`text-xs font-normal transition-colors duration-200 ${currentPath === '/projects' || currentPath === '/projects/' ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>Projects</a>
-          <a href="/resume/lukasz_szymanski_resume.pdf" target="_blank" class="px-3 py-1 text-2xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full shadow-sm transition-all duration-200">Resume</a>
+          <a href={lang === 'en' ? '/' : '/pl/'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath === '/' || currentPath === '/pl/') ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.home')}</a>
+          <a href={lang === 'en' ? '/musician' : '/pl/musician'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/musician') || currentPath.endsWith('/musician/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.musician')}</a>
+          <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/programmer') || currentPath.endsWith('/programmer/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.programmer')}</a>
+          <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/filmmaker') || currentPath.endsWith('/filmmaker/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.filmmaker')}</a>
+          <a href={lang === 'en' ? '/film-music' : '/pl/film-music'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/film-music') || currentPath.endsWith('/film-music/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.filmmusic')}</a>
+          <a href={lang === 'en' ? '/projects' : '/pl/projects'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/projects') || currentPath.endsWith('/projects/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.projects')}</a>
+          
+          <div class="flex items-center gap-2 ml-4 border-l border-[var(--color-border-apple)]/30 pl-4">
+            <a href={route} onclick="localStorage.setItem('user-lang', 'en')" class={`text-xs font-semibold transition-colors ${lang === 'en' ? 'text-white' : 'text-[var(--color-text-secondary)] hover:text-gray-300'}`}>EN</a>
+            <span class="text-[var(--color-text-secondary)] text-xs">/</span>
+            <a href={`/pl${route === '/' ? '/' : route}`} onclick="localStorage.setItem('user-lang', 'pl')" class={`text-xs font-semibold transition-colors ${lang === 'pl' ? 'text-white' : 'text-[var(--color-text-secondary)] hover:text-gray-300'}`}>PL</a>
+          </div>
         </nav>
 
         <!-- Mobile Menu Toggle Button -->
@@ -72,13 +100,18 @@ const currentPath = Astro.url.pathname;
       <!-- Mobile Dropdown Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-[var(--color-bg-dark)]/95 border-b border-[var(--color-border-apple)]/30 backdrop-blur-2xl">
         <div class="px-6 py-4 flex flex-col gap-3">
-          <a href="/" class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">Home</a>
-          <a href="/musician" class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">Musician</a>
-          <a href="/programmer" class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">Programmer</a>
-          <a href="/filmmaker" class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">Filmmaker</a>
-          <a href="/film-music" class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">Film Music</a>
-          <a href="/projects" class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">Projects</a>
-          <a href="/resume/lukasz_szymanski_resume.pdf" target="_blank" class="w-full text-center py-2 text-xs font-semibold text-white bg-blue-600 rounded-full mt-2">Resume</a>
+          <a href={lang === 'en' ? '/' : '/pl/'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.home')}</a>
+          <a href={lang === 'en' ? '/musician' : '/pl/musician'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.musician')}</a>
+          <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.programmer')}</a>
+          <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.filmmaker')}</a>
+          <a href={lang === 'en' ? '/film-music' : '/pl/film-music'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.filmmusic')}</a>
+          <a href={lang === 'en' ? '/projects' : '/pl/projects'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.projects')}</a>
+          
+          <div class="flex items-center justify-center gap-4 py-2 mt-2 border-t border-[var(--color-border-apple)]/30">
+            <a href={route} onclick="localStorage.setItem('user-lang', 'en')" class={`text-sm font-semibold transition-colors ${lang === 'en' ? 'text-white' : 'text-[var(--color-text-secondary)] hover:text-gray-300'}`}>EN</a>
+            <span class="text-[var(--color-text-secondary)] text-sm">|</span>
+            <a href={`/pl${route === '/' ? '/' : route}`} onclick="localStorage.setItem('user-lang', 'pl')" class={`text-sm font-semibold transition-colors ${lang === 'pl' ? 'text-white' : 'text-[var(--color-text-secondary)] hover:text-gray-300'}`}>PL</a>
+          </div>
         </div>
       </div>
     </header>
@@ -93,7 +126,7 @@ const currentPath = Astro.url.pathname;
       <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div>
           <p class="text-xs text-[var(--color-text-secondary)]">
-            Copyright &copy; {new Date().getFullYear()} Łukasz Szymański. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} {t('footer.copyright')}
           </p>
         </div>
 
