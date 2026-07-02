@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Copy } from '@lucide/astro';
+import { Mail, Copy } from '@lucide/astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -37,30 +37,27 @@ const socialLinks = [
 ];
 ---
 
-<Layout title="Home" hideScroll={true}>
-  
-  <!-- Minimalist Centered Text Overlay -->
-  <section class="relative min-h-[calc(100vh-3.5rem)] flex flex-col justify-center items-center px-6 py-20 fade-in">
-    <div class="text-center space-y-12 max-w-2xl mx-auto w-full stagger-children">
-      
-      <div class="space-y-6">
-        <!-- Big Premium Typography Title -->
-        <h1 class="font-outfit text-5xl sm:text-7xl md:text-8xl font-semibold tracking-tight text-white leading-none">
-          {t('index.title')}
+<Layout title="Contact">
+  <section class="max-w-4xl mx-auto px-6 w-full flex flex-col justify-center py-20 min-h-[calc(100vh-7rem)]">
+    <div class="space-y-12 text-center max-w-2xl mx-auto w-full">
+      <!-- Title -->
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+          <Mail class="h-3.5 w-3.5" /> {t('nav.contact')}
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+          {t('contact.title')}
         </h1>
-        
-        <!-- Sleek Apple Subhead -->
-        <p class="text-sm sm:text-base md:text-lg font-normal text-[var(--color-text-secondary)] uppercase tracking-[0.25em] leading-relaxed" set:html={t('index.subtitle')}>
-        </p>
       </div>
 
-      <!-- Email Display & Action -->
+      <!-- Email Display -->
       <div class="space-y-6 max-w-xl mx-auto w-full">
         <!-- Large, elegant typeface email display -->
         <div class="overflow-x-auto py-2 scrollbar-none flex justify-center">
           <a 
             href={`mailto:${email}`} 
-            class="font-outfit text-xl sm:text-2xl md:text-3xl font-extralight tracking-wide text-white hover:text-blue-400 transition-colors duration-300 selection:bg-blue-500/30 break-all px-2"
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight tracking-wide text-white hover:text-blue-400 transition-colors duration-300 selection:bg-blue-500/30 break-all px-2"
+            style="font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;"
           >
             {email}
           </a>
@@ -73,7 +70,7 @@ const socialLinks = [
             data-email={email}
             data-copied-text={t('contact.emailCopied')}
             data-copy-text={t('contact.copyEmail')}
-            class="glass-pill scale-hover relative inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-medium text-gray-300 hover:text-white transition-all duration-300 active:scale-95 shadow-md group/btn overflow-hidden min-w-[160px]"
+            class="relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/30 text-xs font-medium text-gray-300 hover:text-white transition-all duration-300 active:scale-95 shadow-md group/btn overflow-hidden min-w-[160px]"
           >
             <span class="flex items-center gap-2" id="copy-btn-content">
               <Copy class="h-3.5 w-3.5 text-gray-400 group-hover/btn:text-blue-400 transition-colors" id="copy-icon" />
@@ -82,7 +79,7 @@ const socialLinks = [
           </button>
         </div>
       </div>
-
+ 
       <!-- Socials Grid -->
       <div class="space-y-4">
         <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-500">{t('contact.socials')}</h2>
@@ -94,7 +91,7 @@ const socialLinks = [
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="glass scale-hover flex flex-col items-center justify-center w-[100px] h-[90px] p-3 text-gray-400 hover:text-white transition-all duration-300 group"
+                class="flex flex-col items-center justify-center w-[100px] h-[90px] p-3 rounded-xl bg-white/2.5 hover:bg-white/5 border border-white/5 hover:border-blue-500/20 text-gray-400 hover:text-white transition-all duration-300 group hover:-translate-y-0.5"
               >
                 <svg class="h-5 w-5 mb-2 group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={social.svgPath} />
                 <span class="text-[10px] font-medium block truncate max-w-full text-center">{social.name}</span>
@@ -103,17 +100,8 @@ const socialLinks = [
           })}
         </div>
       </div>
-
-    </div>
-
-    <!-- Copyright (Absolute bottom) -->
-    <div class="absolute bottom-6 left-0 w-full text-center fade-in" style="animation-delay: 0.8s;">
-      <p class="text-[10px] text-[var(--color-text-secondary)] uppercase tracking-widest">
-        Copyright &copy; {new Date().getFullYear()} {t('footer.copyright')}
-      </p>
     </div>
   </section>
-
 </Layout>
 
 <script>
@@ -132,7 +120,7 @@ const socialLinks = [
 
         // Animate state change
         copyBtn.classList.add('bg-blue-500/10', 'border-blue-500/40', 'text-blue-400');
-        copyBtn.classList.remove('glass-pill', 'text-gray-300');
+        copyBtn.classList.remove('bg-white/5', 'hover:bg-white/10', 'border-white/10');
         copyBtnText.textContent = copiedText;
         
         // Temporarily replace copy icon with check icon
@@ -144,7 +132,7 @@ const socialLinks = [
             currentIcon.outerHTML = `<svg id="copy-icon" class="h-3.5 w-3.5 text-gray-400 group-hover/btn:text-blue-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
           }
           copyBtn.classList.remove('bg-blue-500/10', 'border-blue-500/40', 'text-blue-400');
-          copyBtn.classList.add('glass-pill', 'text-gray-300');
+          copyBtn.classList.add('bg-white/5', 'hover:bg-white/10', 'border-white/10');
           copyBtnText.textContent = copyText;
         }, 2000);
       } catch (err) {

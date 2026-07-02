@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://szymanski.studio/sitemap-index.xml
