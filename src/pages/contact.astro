@@ -38,7 +38,7 @@ const socialLinks = [
 ---
 
 <Layout title="Contact">
-  <section class="max-w-4xl mx-auto px-6 w-full flex flex-col justify-center py-20 min-h-[calc(100vh-7rem)]">
+  <section class="max-w-4xl mx-auto px-6 w-full flex flex-col justify-center py-20 min-h-[calc(100dvh-7rem)]">
     <div class="space-y-12 text-center max-w-2xl mx-auto w-full">
       <!-- Title -->
       <div class="space-y-3">
@@ -84,17 +84,17 @@ const socialLinks = [
       <div class="space-y-4">
         <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-500">{t('contact.socials')}</h2>
         
-        <div class="flex flex-wrap justify-center gap-4 max-w-xl mx-auto">
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
           {socialLinks.map((social) => {
             return (
               <a
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex flex-col items-center justify-center w-[100px] h-[90px] p-3 rounded-xl bg-white/2.5 hover:bg-white/5 border border-white/5 hover:border-blue-500/20 text-gray-400 hover:text-white transition-all duration-300 group hover:-translate-y-0.5"
+                class="flex flex-col items-center justify-center w-[85px] sm:w-[100px] h-[80px] sm:h-[90px] p-2 sm:p-3 rounded-xl bg-white/2.5 hover:bg-white/5 border border-white/5 hover:border-blue-500/20 text-gray-400 hover:text-white transition-all duration-300 group hover:-translate-y-0.5"
               >
-                <svg class="h-5 w-5 mb-2 group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={social.svgPath} />
-                <span class="text-[10px] font-medium block truncate max-w-full text-center">{social.name}</span>
+                <svg class="h-5 w-5 mb-1.5 sm:mb-2 group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={social.svgPath} />
+                <span class="text-[9px] sm:text-[10px] font-medium block truncate max-w-full text-center w-full px-1">{social.name}</span>
               </a>
             );
           })}

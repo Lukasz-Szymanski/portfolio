@@ -40,7 +40,7 @@ const socialLinks = [
 <Layout title="Home" hideScroll={true}>
   
   <!-- Minimalist Centered Text Overlay -->
-  <section class="relative min-h-[calc(100vh-3.5rem)] flex flex-col justify-center items-center px-6 py-20 fade-in">
+  <section class="relative min-h-[calc(100dvh-3.5rem)] flex flex-col justify-center items-center px-6 py-20 fade-in">
     <div class="text-center space-y-12 max-w-2xl mx-auto w-full stagger-children">
       
       <div class="space-y-6">
@@ -87,17 +87,17 @@ const socialLinks = [
       <div class="space-y-4">
         <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-500">{t('contact.socials')}</h2>
         
-        <div class="flex flex-wrap justify-center gap-4 max-w-xl mx-auto">
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
           {socialLinks.map((social) => {
             return (
               <a
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="glass scale-hover flex flex-col items-center justify-center w-[100px] h-[90px] p-3 text-gray-400 hover:text-white transition-all duration-300 group"
+                class="glass scale-hover flex flex-col items-center justify-center w-[85px] sm:w-[100px] h-[80px] sm:h-[90px] p-2 sm:p-3 text-gray-400 hover:text-white transition-all duration-300 group"
               >
-                <svg class="h-5 w-5 mb-2 group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={social.svgPath} />
-                <span class="text-[10px] font-medium block truncate max-w-full text-center">{social.name}</span>
+                <svg class="h-5 w-5 mb-1.5 sm:mb-2 group-hover:text-blue-400 transition-colors duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={social.svgPath} />
+                <span class="text-[9px] sm:text-[10px] font-medium block truncate max-w-full text-center w-full px-1">{social.name}</span>
               </a>
             );
           })}
