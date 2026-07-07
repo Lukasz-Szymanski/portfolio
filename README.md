@@ -1,6 +1,6 @@
 # Łukasz Szymański - Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-szymanski.netlify.app-00C7B7?style=for-the-badge&logo=netlify)](https://szymanski.netlify.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-szymanski.studio-00C7B7?style=for-the-badge&logo=google-chrome)](https://szymanski.studio)
 
 <p align="center">
   <img src="./public/screenshot.png" alt="Szymanski Studio Portfolio" />
