@@ -1,5 +1,11 @@
 # Łukasz Szymański - Portfolio
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-szymanski.netlify.app-00C7B7?style=for-the-badge&logo=netlify)](https://szymanski.netlify.app)
+
+<p align="center">
+  <img src="./public/screenshot.png" alt="Szymanski Studio Portfolio" />
+</p>
+
 A modern, high-performance personal portfolio built with **Astro** and **Tailwind CSS**. It showcases my professional work and achievements across multiple disciplines: Classical Musician, Software Developer, Filmmaker, and Film Composer.
 
 ## 🚀 Tech Stack
