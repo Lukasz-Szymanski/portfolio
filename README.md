@@ -42,4 +42,7 @@ All commands are run from the root of the project, from a terminal:
     - Added dynamic SEO metadata (`<link rel="alternate" hreflang="...">`) to `Layout.astro` for search engine indexing.
   - **Enhancement:** Temporarily removed the **CV/Resume** button from the main navigation (desktop & mobile).
 </details>
-\n## Recent Updates\n- Optimized background video, added OpenGraph tags, and fixed external link security.
+
+## Recent Updates
+
+- Optimized background video, added OpenGraph tags, and fixed external link security.
