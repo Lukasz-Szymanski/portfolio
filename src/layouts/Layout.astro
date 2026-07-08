@@ -92,7 +92,7 @@ const route = getRouteFromUrl(Astro.url) || '/';
           <a href={lang === 'en' ? '/musician' : '/pl/musician'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/musician') || currentPath.endsWith('/musician/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.musician')}</a>
           <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/programmer') || currentPath.endsWith('/programmer/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.programmer')}</a>
           <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/filmmaker') || currentPath.endsWith('/filmmaker/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.filmmaker')}</a>
-          <a href={lang === 'en' ? '/film-music' : '/pl/film-music'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/film-music') || currentPath.endsWith('/film-music/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.filmmusic')}</a>
+
           <a href={lang === 'en' ? '/contact' : '/pl/contact'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/contact') || currentPath.endsWith('/contact/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.contact')}</a>
           
           <div class="flex items-center gap-2 border-l border-[var(--color-border-apple)]/30 pl-4">
@@ -118,7 +118,7 @@ const route = getRouteFromUrl(Astro.url) || '/';
           <a href={lang === 'en' ? '/musician' : '/pl/musician'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.musician')}</a>
           <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.programmer')}</a>
           <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.filmmaker')}</a>
-          <a href={lang === 'en' ? '/film-music' : '/pl/film-music'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.filmmusic')}</a>
+
           <a href={lang === 'en' ? '/contact' : '/pl/contact'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.contact')}</a>
           
           <div class="flex items-center justify-center gap-4 py-2 mt-2 border-t border-[var(--color-border-apple)]/30">

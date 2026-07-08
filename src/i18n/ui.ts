@@ -11,7 +11,7 @@ export const ui = {
     'nav.home': 'Home',
     'nav.musician': 'Musician',
     'nav.programmer': 'Programmer',
-    'nav.filmmaker': 'Filmmaker',
+    'nav.filmmaker': 'Film & Audio',
     'nav.filmmusic': 'Film Music',
     'nav.projects': 'Projects',
     'nav.resume': 'Resume',
@@ -21,6 +21,13 @@ export const ui = {
     // Index
     'index.title': 'Łukasz Szymański',
     'index.subtitle': 'Musician <span class="text-gray-600 mx-1">·</span> Developer <span class="text-gray-600 mx-1">·</span> Filmmaker',
+    'index.bento.dev.title': 'AI & Backend Developer',
+    'index.bento.dev.desc': 'Building intelligent systems & scalable architectures.',
+    'index.bento.music.title': 'Orchestral Musician',
+    'index.bento.music.desc': 'Classical violinist with international stage experience.',
+    'index.bento.film.title': 'Film & Sound',
+    'index.bento.film.desc': 'Video editing and emotional film scoring.',
+    'index.terminal': '> sudo merge --branch="lukasz-szymanski" --into="your-team"',
 
     // Contact
     'contact.title': 'Let’s build something together',
@@ -128,7 +135,7 @@ export const ui = {
     'nav.home': 'Główna',
     'nav.musician': 'Muzyk',
     'nav.programmer': 'Programista',
-    'nav.filmmaker': 'Filmowiec',
+    'nav.filmmaker': 'Film i Muzyka',
     'nav.filmmusic': 'Muzyka Filmowa',
     'nav.projects': 'Projekty',
     'nav.resume': 'Życiorys',
@@ -138,6 +145,13 @@ export const ui = {
     // Index
     'index.title': 'Łukasz Szymański',
     'index.subtitle': 'Muzyk <span class="text-gray-600 mx-1">·</span> Programista <span class="text-gray-600 mx-1">·</span> Filmowiec',
+    'index.bento.dev.title': 'AI & Backend Developer',
+    'index.bento.dev.desc': 'Budowa inteligentnych systemów i skalowalnej architektury.',
+    'index.bento.music.title': 'Muzyk Orkiestrowy',
+    'index.bento.music.desc': 'Klasyczny skrzypek z międzynarodowym doświadczeniem scenicznym.',
+    'index.bento.film.title': 'Film i Muzyka',
+    'index.bento.film.desc': 'Montaż wideo oraz emocjonalna muzyka filmowa.',
+    'index.terminal': '> sudo merge --branch="lukasz-szymanski" --into="your-team"',
 
     // Contact
     'contact.title': 'Zbudujmy coś razem',
