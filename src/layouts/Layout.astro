@@ -88,15 +88,12 @@ const route = getRouteFromUrl(Astro.url) || '/';
 
         <!-- Desktop Nav (Apple style: small, centered text, clean spacing) -->
         <nav class="hidden md:flex items-center gap-8">
-          <!--
           <a href={lang === 'en' ? '/' : '/pl/'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath === '/' || currentPath === '/pl/') ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.home')}</a>
           <a href={lang === 'en' ? '/musician' : '/pl/musician'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/musician') || currentPath.endsWith('/musician/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.musician')}</a>
           <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/programmer') || currentPath.endsWith('/programmer/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.programmer')}</a>
           <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/filmmaker') || currentPath.endsWith('/filmmaker/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.filmmaker')}</a>
           <a href={lang === 'en' ? '/film-music' : '/pl/film-music'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/film-music') || currentPath.endsWith('/film-music/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.filmmusic')}</a>
-          <a href={lang === 'en' ? '/projects' : '/pl/projects'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/projects') || currentPath.endsWith('/projects/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.projects')}</a>
           <a href={lang === 'en' ? '/contact' : '/pl/contact'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/contact') || currentPath.endsWith('/contact/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.contact')}</a>
-          -->
           
           <div class="flex items-center gap-2 border-l border-[var(--color-border-apple)]/30 pl-4">
             <a href={route} onclick="localStorage.setItem('user-lang', 'en')" class={`text-xs font-semibold transition-colors ${lang === 'en' ? 'text-white' : 'text-[var(--color-text-secondary)] hover:text-gray-300'}`}>EN</a>
@@ -117,15 +114,12 @@ const route = getRouteFromUrl(Astro.url) || '/';
       <!-- Mobile Dropdown Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-[var(--color-bg-dark)]/95 border-b border-[var(--color-border-apple)]/30 backdrop-blur-2xl">
         <div class="px-6 py-4 flex flex-col gap-3">
-          <!--
           <a href={lang === 'en' ? '/' : '/pl/'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.home')}</a>
           <a href={lang === 'en' ? '/musician' : '/pl/musician'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.musician')}</a>
           <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.programmer')}</a>
           <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.filmmaker')}</a>
           <a href={lang === 'en' ? '/film-music' : '/pl/film-music'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.filmmusic')}</a>
-          <a href={lang === 'en' ? '/projects' : '/pl/projects'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.projects')}</a>
           <a href={lang === 'en' ? '/contact' : '/pl/contact'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.contact')}</a>
-          -->
           
           <div class="flex items-center justify-center gap-4 py-2 mt-2 border-t border-[var(--color-border-apple)]/30">
             <a href={route} onclick="localStorage.setItem('user-lang', 'en')" class={`text-sm font-semibold transition-colors ${lang === 'en' ? 'text-white' : 'text-[var(--color-text-secondary)] hover:text-gray-300'}`}>EN</a>

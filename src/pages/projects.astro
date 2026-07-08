@@ -11,30 +11,44 @@ const featuredProjects = [
   {
     title: t('project.1.title'),
     description: t('project.1.desc'),
-    tech: ["Astro", "Tailwind CSS", "TypeScript", "i18n"],
-    github: "https://github.com/Lukasz-Szymanski/Young_Ludwig",
-    icon: Globe
+    tech: ["Python", "AI Integration", "CLI", "Shannon Entropy"],
+    github: "https://github.com/Lukasz-Szymanski/git_sensei",
+    icon: Code
   },
   {
     title: t('project.2.title'),
     description: t('project.2.desc'),
-    tech: ["HTML5", "Tailwind CSS", "Vanilla JS"],
-    github: "https://github.com/Lukasz-Szymanski/Neurolog_Dzieciecy",
-    icon: Cpu
+    tech: ["Python", "TCP Sockets", "Threading", "JSON"],
+    github: "https://gitlab.com/Lukasz-Szymanski/client_server",
+    icon: Globe
   },
   {
     title: t('project.3.title'),
     description: t('project.3.desc'),
-    tech: ["JavaScript", "CSS3", "Random Generator"],
-    github: "https://github.com/Lukasz-Szymanski/A-vista",
-    icon: Music
+    tech: ["Astro", "TypeScript", "Tailwind CSS", "i18n"],
+    github: "https://github.com/Lukasz-Szymanski/portfolio",
+    icon: Sparkles
   },
   {
     title: t('project.4.title'),
     description: t('project.4.desc'),
-    tech: ["TypeScript", "Node.js", "AI Integration"],
-    github: "https://github.com/Lukasz-Szymanski/git_sensei",
-    icon: Code
+    tech: ["Python", "FastAPI", "Streamlit", "LLM API"],
+    github: "https://github.com/Lukasz-Szymanski/jarvis_mark_1",
+    icon: Cpu
+  },
+  {
+    title: t('project.5.title'),
+    description: t('project.5.desc'),
+    tech: ["Astro", "Tailwind CSS", "i18n"],
+    github: "https://github.com/Lukasz-Szymanski/IBG-Website",
+    icon: Globe
+  },
+  {
+    title: t('project.6.title'),
+    description: t('project.6.desc'),
+    tech: ["Astro", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/Lukasz-Szymanski/Young_Ludwig",
+    icon: Music
   }
 ];
 ---
@@ -55,8 +69,8 @@ const featuredProjects = [
       </p>
     </div>
 
-    <!-- Tight 2x2 Grid that fits entirely within the screen height without scrolling -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto w-full select-none">
+    <!-- Grid for 3 Projects -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto w-full select-none">
       {featuredProjects.map(proj => {
         const Icon = proj.icon;
         return (

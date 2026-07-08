@@ -1,16 +1,38 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Film } from '@lucide/astro';
+import { Film, PlayCircle, ExternalLink } from '@lucide/astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+// Wstaw tutaj ID filmów ze swojej playlisty YouTube (to, co jest po v=)
+const videos = [
+  { 
+    id: "f6yXdA5Xlso",
+    title: t('video.1.title'),
+    author: t('video.1.author'),
+    description: t('video.1.desc'),
+    genre: t('video.1.genre'),
+    year: "2023",
+    icon: Film
+  },
+  { 
+    id: "Fae3sNg-h4s",
+    title: t('video.2.title'),
+    author: t('video.2.author'),
+    description: t('video.2.desc'),
+    genre: t('video.2.genre'),
+    year: "2024",
+    icon: PlayCircle
+  }
+];
 ---
 
 <Layout title="Filmmaker">
   
-  <section class="max-w-5xl mx-auto px-6 flex-grow w-full flex items-center">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full min-w-0">
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 min-h-[calc(100vh-3.5rem)] w-full flex items-center justify-center py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full min-w-0 bg-black/20 backdrop-blur-sm p-8 md:p-16 lg:p-20 rounded-[2.5rem] border border-white/5">
       
       <!-- Left Column: Huge Apple Slogan with Gradient -->
       <div class="space-y-4 min-w-0">
@@ -23,7 +45,7 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Right Column: Biography Content in Editorial style -->
-      <div class="space-y-8 font-sans min-w-0 py-12">
+      <div class="space-y-8 font-sans min-w-0">
         
         <div class="space-y-4">
           <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('filmmaker.h1')}</h2>
@@ -32,7 +54,7 @@ const t = useTranslations(lang);
               {t('filmmaker.p1')}
             </p>
             <p>
-              {t('filmmaker.p2')}
+              {t('filmmaker.p2_1')}<span class="text-white">{t('filmmaker.p2_2')}</span>{t('filmmaker.p2_3')}
             </p>
           </div>
         </div>
@@ -43,7 +65,7 @@ const t = useTranslations(lang);
           <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('filmmaker.h2')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              {t('filmmaker.p3')}
+              {t('filmmaker.p3_1')}<span class="text-white">{t('filmmaker.p3_2')}</span>{t('filmmaker.p3_3')}
             </p>
             <p>
               {t('filmmaker.p4')}
@@ -53,6 +75,54 @@ const t = useTranslations(lang);
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- Videos Section directly on Filmmaker page -->
+  <section class="max-w-4xl mx-auto px-6 pb-20 w-full flex flex-col space-y-8">
+    <div class="h-[1px] w-full bg-[var(--color-border-apple)]/20 mb-4"></div>
+    <div class="flex items-center gap-2">
+      <h2 class="text-xl font-semibold text-white tracking-tight">Portfolio Wideo</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      {videos.map(video => {
+        const Icon = video.icon;
+        return (
+          <div class="group relative bg-[var(--color-bg-card)] border border-[var(--color-border-apple)]/30 hover:border-blue-500/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
+            
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+            <div class="space-y-4 relative z-10">
+              <div class="flex justify-between items-start">
+                <div class="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 shadow-inner">
+                  <Icon class="h-5 w-5" />
+                </div>
+                <span class="text-xs font-mono text-zinc-500 bg-black/40 px-2.5 py-1 rounded-md border border-white/5">{video.year}</span>
+              </div>
+              
+              <div>
+                <h2 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug mb-1">{video.title}</h2>
+                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wide">{video.author}</p>
+              </div>
+              
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                {video.description}
+              </p>
+            </div>
+            
+            <div class="pt-6 mt-auto relative z-10 flex items-center justify-between">
+              <span class="px-2.5 py-1 text-2xs font-semibold rounded-full bg-white/5 text-zinc-300 border border-white/10">
+                {video.genre}
+              </span>
+              
+              <a href={`https://youtu.be/${video.id}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                <PlayCircle class="h-4 w-4" /> {t('filmmaker.watch')}
+              </a>
+            </div>
+          </div>
+        )
+      })}
     </div>
   </section>
 

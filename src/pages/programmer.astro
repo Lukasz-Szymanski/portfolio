@@ -1,16 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Code } from '@lucide/astro';
+import { Code, Globe, Sparkles, ExternalLink, Cpu, Music } from '@lucide/astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const featuredProjects = [
+  {
+    title: t('project.1.title'),
+    description: t('project.1.desc'),
+    tech: ["Python", "AI Integration", "CLI", "Shannon Entropy"],
+    github: "https://github.com/Lukasz-Szymanski/git_sensei",
+    icon: Code
+  },
+  {
+    title: t('project.2.title'),
+    description: t('project.2.desc'),
+    tech: ["Python", "TCP Sockets", "Threading", "JSON"],
+    github: "https://gitlab.com/Lukasz-Szymanski/client_server",
+    icon: Globe
+  },
+  {
+    title: t('project.3.title'),
+    description: t('project.3.desc'),
+    tech: ["Astro", "TypeScript", "Tailwind CSS", "i18n"],
+    github: "https://github.com/Lukasz-Szymanski/portfolio",
+    icon: Sparkles
+  },
+  {
+    title: t('project.4.title'),
+    description: t('project.4.desc'),
+    tech: ["Python", "FastAPI", "Streamlit", "LLM API"],
+    github: "https://github.com/Lukasz-Szymanski/jarvis_mark_1",
+    icon: Cpu
+  },
+  {
+    title: t('project.5.title'),
+    description: t('project.5.desc'),
+    tech: ["Astro", "Tailwind CSS", "i18n"],
+    github: "https://github.com/Lukasz-Szymanski/IBG-Website",
+    icon: Globe
+  },
+  {
+    title: t('project.6.title'),
+    description: t('project.6.desc'),
+    tech: ["Astro", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/Lukasz-Szymanski/Young_Ludwig",
+    icon: Music
+  }
+];
 ---
 
 <Layout title="Programmer">
   
-  <section class="max-w-5xl mx-auto px-6 flex-grow w-full flex items-center">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full min-w-0">
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 min-h-[calc(100vh-3.5rem)] w-full flex items-center justify-center py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full min-w-0 bg-black/20 backdrop-blur-sm p-8 md:p-16 lg:p-20 rounded-[2.5rem] border border-white/5">
       
       <!-- Left Column: Huge Apple Slogan with Gradient -->
       <div class="space-y-4 min-w-0">
@@ -23,7 +68,7 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Right Column: Biography Content in Editorial style -->
-      <div class="space-y-8 font-sans min-w-0 py-12">
+      <div class="space-y-8 font-sans min-w-0">
         
         <div class="space-y-4">
           <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('programmer.h1')}</h2>
@@ -32,7 +77,7 @@ const t = useTranslations(lang);
               {t('programmer.p1')}
             </p>
             <p>
-              {t('programmer.p2_1')}<span class="text-white">{t('programmer.p2_2')}</span>{t('programmer.p2_3')}
+              {t('programmer.p2_1')}<span class="text-white">{t('programmer.p2_2')}</span>{t('programmer.p2_3')}<span class="text-white">{t('programmer.p2_4')}</span>{t('programmer.p2_5')}
             </p>
           </div>
         </div>
@@ -53,6 +98,48 @@ const t = useTranslations(lang);
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- Projects Section directly on Programmer page -->
+  <section class="max-w-6xl mx-auto px-6 pb-20 w-full flex flex-col space-y-8">
+    <div class="h-[1px] w-full bg-[var(--color-border-apple)]/20 mb-4"></div>
+    <div class="flex items-center gap-2">
+      <h2 class="text-xl font-semibold text-white tracking-tight">{t('projects.title')}</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full select-none">
+      {featuredProjects.map(proj => {
+        const Icon = proj.icon;
+        return (
+          <div class="group relative bg-[var(--color-bg-card)] border border-[var(--color-border-apple)]/30 hover:border-blue-500/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
+            
+            <!-- Subtle background glow on hover -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+            <div class="space-y-4 relative z-10">
+              <div class="flex justify-between items-start">
+                <div class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                  <Icon class="h-4 w-4" />
+                </div>
+                <a href={proj.github} target="_blank" rel="noopener noreferrer" aria-label="View repository" class="p-1 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+                  <ExternalLink class="h-3.5 w-3.5" />
+                </a>
+              </div>
+              <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors leading-snug">{proj.title}</h3>
+              <p class="text-2xs text-[var(--color-text-secondary)] leading-relaxed">{proj.description}</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-1.5 pt-6 mt-auto relative z-10">
+              {proj.tech.map(tech => (
+                <span class="px-2 py-0.5 text-2xs font-medium rounded-full bg-blue-950/20 text-blue-400 border border-blue-500/10">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        )
+      })}
     </div>
   </section>
 
