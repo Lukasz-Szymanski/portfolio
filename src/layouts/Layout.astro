@@ -74,6 +74,12 @@ const route = getRouteFromUrl(Astro.url) || '/';
         <source src="/video/showreel.webm" type="video/webm" />
         <source src="/video/showreel.mp4" type="video/mp4" />
       </video>
+      
+      <!-- Aurora Background Effects -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none z-20">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen opacity-50 animate-pulse"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen opacity-50 animate-pulse" style="animation-delay: 2s;"></div>
+      </div>
     </div>
 
     <!-- Header / Navbar -->

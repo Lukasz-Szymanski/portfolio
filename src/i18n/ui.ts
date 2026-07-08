@@ -28,6 +28,7 @@ export const ui = {
     'index.bento.film.title': 'Film & Sound',
     'index.bento.film.desc': 'Video editing and emotional film scoring.',
     'index.terminal': '> sudo merge --branch="lukasz-szymanski" --into="your-team"',
+    'index.cta': "Let's collaborate",
 
     // Contact
     'contact.title': 'Let’s build something together',
@@ -152,6 +153,7 @@ export const ui = {
     'index.bento.film.title': 'Film i Muzyka',
     'index.bento.film.desc': 'Montaż wideo oraz emocjonalna muzyka filmowa.',
     'index.terminal': '> sudo merge --branch="lukasz-szymanski" --into="your-team"',
+    'index.cta': 'Nawiążmy współpracę',
 
     // Contact
     'contact.title': 'Zbudujmy coś razem',
