@@ -92,7 +92,6 @@ export const ui = {
     // Soundtracks
     'soundtrack.1.title': 'Apple',
     'soundtrack.1.director': 'Mateusz Durowski',
-    'soundtrack.1.director': 'K. Witek',
     'soundtrack.1.desc': 'A dark story about grief and forbidden rituals. Grieving the loss of her own child, a woman turns to forbidden rituals in a desperate attempt to bring him back.',
     'soundtrack.1.genre': 'Horror',
     'soundtrack.2.title': 'Collages',
@@ -217,7 +216,7 @@ export const ui = {
     
     // Soundtracks
     'soundtrack.1.title': 'Jabłko',
-    'soundtrack.1.director': 'K. Witek',
+    'soundtrack.1.director': 'Mateusz Durowski',
     'soundtrack.1.desc': 'Mroczna opowieść o żalu, niewinności i cienkiej granicy między troską a obsesją. Pogrążona w żałobie po stracie dziecka, kobieta ucieka się do zakazanych rytuałów.',
     'soundtrack.1.genre': 'Horror',
     'soundtrack.2.title': 'Kolaże',
