@@ -82,10 +82,10 @@ export const ui = {
     'filmmusic.cta.btn': 'Get in touch',
     
     // Soundtracks
-    'soundtrack.1.title': 'Client Project Alpha',
-    'soundtrack.1.director': 'Commercial',
-    'soundtrack.1.desc': 'An atmospheric string-based score created for a promotional video.',
-    'soundtrack.1.genre': 'Commercial',
+    'soundtrack.1.title': 'In a gloomy forest',
+    'soundtrack.1.director': 'Mateusz Durowski',
+    'soundtrack.1.desc': 'In a gloomy forest, a young boy named Adam encounters a mysterious woman who initially appears caring. However, her true intentions slowly unfold. Grieving the loss of her own child, the woman turns to forbidden rituals in a desperate attempt to bring him back. Adam becomes an unwitting pawn in her dark pursuit. The film is a haunting tale of grief, innocence, and the thin line between care and obsession.',
+    'soundtrack.1.genre': 'Short Film',
     'soundtrack.2.title': 'Documentary Score',
     'soundtrack.2.director': 'Indie Film',
     'soundtrack.2.desc': 'A minimalist acoustic track designed to highlight emotional vulnerability.',
@@ -199,10 +199,10 @@ export const ui = {
     'filmmusic.cta.btn': 'Skontaktuj się',
     
     // Soundtracks
-    'soundtrack.1.title': 'Projekt Komercyjny',
-    'soundtrack.1.director': 'Reklama',
-    'soundtrack.1.desc': 'Klimatyczna ścieżka smyczkowa stworzona na potrzeby wideo promocyjnego.',
-    'soundtrack.1.genre': 'Reklama',
+    'soundtrack.1.title': 'W mrocznym lesie',
+    'soundtrack.1.director': 'Mateusz Durowski',
+    'soundtrack.1.desc': 'W mrocznym lesie młody chłopiec o imieniu Adam spotyka tajemniczą kobietę, która początkowo wydaje się troskliwa. Jednak jej prawdziwe intencje powoli się ujawniają. Pogrążona w żałobie po stracie własnego dziecka, kobieta ucieka się do zakazanych rytuałów, desperacko próbując je odzyskać. Adam staje się nieświadomym pionkiem w jej mrocznych poczynaniach. Film to przejmująca opowieść o żalu, niewinności i cienkiej granicy między troską a obsesją.',
+    'soundtrack.1.genre': 'Film Krótkometrażowy',
     'soundtrack.2.title': 'Oprawa Dokumentu',
     'soundtrack.2.director': 'Projekt Niezależny',
     'soundtrack.2.desc': 'Minimalistyczny utwór akustyczny, stworzony by podkreślić emocjonalny ciężar obrazu.',

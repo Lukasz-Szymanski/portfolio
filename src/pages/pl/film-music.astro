@@ -13,8 +13,9 @@ const soundtracks = [
     director: t('soundtrack.1.director'),
     description: t('soundtrack.1.desc'),
     genre: t('soundtrack.1.genre'),
-    year: "2023",
-    icon: Film
+    year: "2025",
+    icon: Film,
+    url: "https://www.youtube.com/watch?v=dqFi5vlX7Mk"
   },
   {
     title: t('soundtrack.2.title'),
@@ -83,9 +84,9 @@ const soundtracks = [
                 {track.genre}
               </span>
               
-              <button class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+              <a href={track.url || "#"} target={track.url ? "_blank" : undefined} rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors">
                 <PlayCircle class="h-4 w-4" /> {t('filmmusic.listen')}
-              </button>
+              </a>
             </div>
           </div>
         )
