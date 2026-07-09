@@ -15,9 +15,9 @@ const t = useTranslations(lang);
       
       <!-- Hero Header -->
       <div class="text-center space-y-6 fade-in">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-950/30 border border-blue-500/20 text-blue-400 text-[10px] sm:text-xs font-mono mb-4 backdrop-blur-md max-w-full overflow-hidden">
-          <Terminal class="w-3.5 h-3.5 shrink-0" />
-          <span class="typing-effect">{t('index.terminal')}</span>
+        <div class="inline-flex flex-wrap items-center gap-2 px-3 py-2 rounded-[20px] bg-blue-950/30 border border-blue-500/20 text-blue-400 text-[10px] sm:text-xs font-mono mb-4 backdrop-blur-md max-w-full text-left">
+          <Terminal class="w-3.5 h-3.5 shrink-0 mt-0.5 self-start" />
+          <span class="typing-cursor break-all leading-relaxed" id="hero-typewriter" data-text={t('index.terminal')}></span>
         </div>
         
         <h1 class="font-outfit text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-zinc-200 to-zinc-500 leading-none">
@@ -96,18 +96,11 @@ const t = useTranslations(lang);
 </Layout>
 
 <style>
-  .typing-effect {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
+  .typing-cursor::after {
+    content: '';
     border-right: 2px solid rgba(59, 130, 246, 0.5);
-    width: 0;
-    animation: typing 3.5s steps(59, end) forwards, blink-caret 0.75s step-end infinite;
-  }
-
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 59ch }
+    animation: blink-caret 0.75s step-end infinite;
+    margin-left: 2px;
   }
 
   @keyframes blink-caret {
@@ -140,6 +133,26 @@ const t = useTranslations(lang);
 </style>
 
 <script>
+  // Typewriter effect
+  const typewriterEl = document.getElementById('hero-typewriter');
+  if (typewriterEl) {
+    const textToType = typewriterEl.getAttribute('data-text') || '';
+    let i = 0;
+    typewriterEl.textContent = ''; // clear initial
+
+    function typeNextChar() {
+      if (i < textToType.length) {
+        typewriterEl.textContent += textToType.charAt(i);
+        i++;
+        // random delay for realistic typing
+        const delay = Math.random() * 30 + 30; 
+        setTimeout(typeNextChar, delay);
+      }
+    }
+
+    setTimeout(typeNextChar, 500); // initial delay
+  }
+
   // Mouse tracking for the glow effect on cards
   const cards = document.querySelectorAll('.bento-card');
   
