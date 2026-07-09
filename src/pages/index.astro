@@ -7,7 +7,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Home" description={t('index.meta.desc')} hideScroll={true}>
+<Layout title="Home" description={t('index.meta.desc')}>
   
   <section class="relative min-h-[calc(100dvh-3.5rem)] flex flex-col justify-center items-center px-4 sm:px-6 py-12 z-10">
     
@@ -15,8 +15,8 @@ const t = useTranslations(lang);
       
       <!-- Hero Header -->
       <div class="text-center space-y-6 fade-in">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-950/30 border border-blue-500/20 text-blue-400 text-xs font-mono mb-4 backdrop-blur-md">
-          <Terminal class="w-3.5 h-3.5" />
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-950/30 border border-blue-500/20 text-blue-400 text-[10px] sm:text-xs font-mono mb-4 backdrop-blur-md max-w-full overflow-hidden">
+          <Terminal class="w-3.5 h-3.5 shrink-0" />
           <span class="typing-effect">{t('index.terminal')}</span>
         </div>
         
