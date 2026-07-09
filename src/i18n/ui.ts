@@ -19,6 +19,7 @@ export const ui = {
     'footer.copyright': 'Łukasz Szymański. All rights reserved.',
     
     // Index
+    'index.meta.desc': 'Welcome to Łukasz Szymański\'s portfolio. Classical musician, backend developer, and filmmaker combining logic with artistic vision.',
     'index.title': 'Łukasz Szymański',
     'index.subtitle': 'Musician <span class="text-gray-600 mx-1">·</span> Developer <span class="text-gray-600 mx-1">·</span> Filmmaker',
     'index.bento.dev.title': 'AI & Backend Developer',
@@ -37,6 +38,7 @@ export const ui = {
     'contact.socials': 'Find me online',
 
     // Musician
+    'musician.meta.desc': 'Explore the orchestral and pedagogical career of Łukasz Szymański. Classical violinist with international stage experience.',
     'musician.tag': 'Classical & Education',
     'musician.title': 'Music is a craft.<br />The stage is a passion.',
     'musician.h1': 'Orchestral Career',
@@ -51,6 +53,7 @@ export const ui = {
     'musician.p4': 'I take a deeply personal approach to education. I tailor my methods to each student, helping them not only master technique but also build confidence both on and off the stage.',
 
     // Programmer
+    'programmer.meta.desc': 'Portfolio of Łukasz Szymański. Python and AI Backend Developer focusing on intelligent CLI tools and scalable architectures.',
     'programmer.tag': 'Python. Backend. Automation.',
     'programmer.title': 'From music to code.<br />Logic & problem solving.',
     'programmer.h1': 'My journey into programming',
@@ -67,6 +70,7 @@ export const ui = {
     'programmer.p4': 'I am looking for commercial collaborations or my first steps in the IT industry. I bring the work ethic of classical music to tech: discipline, attention to detail, and a drive for continuous growth.',
 
     // Filmmaker
+    'filmmaker.meta.desc': 'Video editing and custom film scoring by Łukasz Szymański. Seamless narratives where sound and picture are in perfect harmony.',
     'filmmaker.tag': 'Video Editing & Film Scoring',
     'filmmaker.title': 'An ear for rhythm.<br />An eye for the cut.',
     'filmmaker.h1': 'Sound and picture in harmony',
@@ -144,6 +148,7 @@ export const ui = {
     'footer.copyright': 'Łukasz Szymański. Wszelkie prawa zastrzeżone.',
     
     // Index
+    'index.meta.desc': 'Portfolio Łukasza Szymańskiego. Klasyczny muzyk, programista backend/AI oraz filmowiec łączący logikę z artystyczną wizją.',
     'index.title': 'Łukasz Szymański',
     'index.subtitle': 'Muzyk <span class="text-gray-600 mx-1">·</span> Programista <span class="text-gray-600 mx-1">·</span> Filmowiec',
     'index.bento.dev.title': 'AI & Backend Developer',
@@ -162,6 +167,7 @@ export const ui = {
     'contact.socials': 'Znajdź mnie w sieci',
 
     // Musician
+    'musician.meta.desc': 'Kariera orkiestrowa i działalność pedagogiczna Łukasza Szymańskiego. Skrzypek klasyczny z międzynarodowym doświadczeniem scenicznym.',
     'musician.tag': 'Klasyka i Nauczanie',
     'musician.title': 'Muzyka to rzemiosło.<br />Scena to pasja.',
     'musician.h1': 'Kariera Orkiestrowa',
@@ -176,6 +182,7 @@ export const ui = {
     'musician.p4': 'Traktuję edukację bardzo osobiście. Szukam indywidualnego podejścia do każdego ucznia, pomagając im nie tylko w technice gry, ale i w budowaniu pewności siebie na scenie i poza nią.',
 
     // Programmer
+    'programmer.meta.desc': 'Projekty IT Łukasza Szymańskiego. Programista Python i AI Backend tworzący inteligentne narzędzia CLI oraz czystą architekturę.',
     'programmer.tag': 'Python. Backend. Automatyzacja.',
     'programmer.title': 'Od muzyki do kodu.<br />Logika i rozwiązywanie problemów.',
     'programmer.h1': 'Moja droga do programowania',
@@ -192,6 +199,7 @@ export const ui = {
     'programmer.p4': 'Szukam możliwości komercyjnej współpracy lub pierwszych kroków w branży IT. Wnoszę do zespołu etykę pracy ze świata muzyki klasycznej: żelazną dyscyplinę, dbałość o detale i chęć ciągłego rozwoju.',
 
     // Filmmaker
+    'filmmaker.meta.desc': 'Montaż wideo i tworzenie autorskiej muzyki filmowej przez Łukasza Szymańskiego. Obraz i dźwięk w pełnej harmonii.',
     'filmmaker.tag': 'Montaż Wideo & Muzyka Filmowa',
     'filmmaker.title': 'Ucho do rytmu.<br />Oko do kadrów.',
     'filmmaker.h1': 'Obraz i dźwięk w pełnej harmonii',

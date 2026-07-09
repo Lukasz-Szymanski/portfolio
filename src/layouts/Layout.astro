@@ -39,8 +39,23 @@ const route = getRouteFromUrl(Astro.url) || '/';
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL('/images/og-image.jpg', Astro.url)} />
 
-    <link rel="alternate" href={new URL(route, Astro.site || Astro.url.origin).href} hreflang="en" />
-    <link rel="alternate" href={new URL(`/pl${route === '/' ? '/' : route}`, Astro.site || Astro.url.origin).href} hreflang="pl" />
+    <link rel="canonical" href={Astro.url.href.replace(/\/$/, '')} />
+    <link rel="alternate" href={new URL(route, Astro.site || Astro.url.origin).href.replace(/\/$/, '')} hreflang="en" />
+    <link rel="alternate" href={new URL(`/pl${route === '/' ? '' : route}`, Astro.site || Astro.url.origin).href.replace(/\/$/, '')} hreflang="pl" />
+    
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Łukasz Szymański",
+      "url": "https://szymanski.studio",
+      "jobTitle": ["Musician", "Programmer", "Filmmaker"],
+      "sameAs": [
+        "https://github.com/Lukasz-Szymanski",
+        "https://www.linkedin.com/in/lukasz-szymanski94/",
+        "https://www.instagram.com/szymanski_studio/",
+        "https://www.youtube.com/channel/UCKNDC6ymPscd0PPdEGr8eJw"
+      ]
+    })} />
     
     <script define:vars={{ currentLang: lang, currentRoute: route }}>
       // Smart Routing for language detection
@@ -48,10 +63,14 @@ const route = getRouteFromUrl(Astro.url) || '/';
       
       if (!storedLang) {
         const browserLang = navigator.language.toLowerCase();
-        if (browserLang.startsWith('pl') && currentLang !== 'pl') {
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const isPolishLocation = browserLang.startsWith('pl') || timeZone === 'Europe/Warsaw';
+        
+        if (isPolishLocation && currentLang !== 'pl') {
           localStorage.setItem('user-lang', 'pl');
-          window.location.replace('/pl' + (currentRoute === '/' ? '/' : currentRoute));
-        } else if (!browserLang.startsWith('pl') && currentLang !== 'en') {
+          const redirectRoute = currentRoute === '/' ? '' : currentRoute;
+          window.location.replace('/pl' + redirectRoute);
+        } else if (!isPolishLocation && currentLang !== 'en') {
           localStorage.setItem('user-lang', 'en');
           window.location.replace(currentRoute);
         }
