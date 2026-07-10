@@ -13,6 +13,8 @@ const currentPath = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const route = getRouteFromUrl(Astro.url) || '/';
+
+const displayTitle = title === 'Home' ? 'Łukasz Szymański | szymanski.studio' : `${title} | Łukasz Szymański`;
 ---
 
 <!DOCTYPE html>
@@ -25,17 +27,17 @@ const route = getRouteFromUrl(Astro.url) || '/';
     <meta name="keywords" content="classical musician, programmer, filmmaker, portfolio, projects, achievements, Łukasz Szymański" />
     <meta name="author" content="Łukasz Szymański" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <title>{title} | Łukasz Szymański</title>
+    <title>{displayTitle}</title>
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={`${title} | Łukasz Szymański`} />
+    <meta property="og:title" content={displayTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL('/images/og-image.jpg', Astro.url)} />
     
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={`${title} | Łukasz Szymański`} />
+    <meta property="twitter:title" content={displayTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL('/images/og-image.jpg', Astro.url)} />
 
