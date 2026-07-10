@@ -47,15 +47,29 @@ const displayTitle = title === 'Home' ? 'Łukasz Szymański | szymanski.studio' 
     
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Łukasz Szymański",
-      "url": "https://szymanski.studio",
-      "jobTitle": ["Musician", "Programmer", "Filmmaker"],
-      "sameAs": [
-        "https://github.com/Lukasz-Szymanski",
-        "https://www.linkedin.com/in/lukasz-szymanski94/",
-        "https://www.instagram.com/szymanski_studio/",
-        "https://www.youtube.com/channel/UCKNDC6ymPscd0PPdEGr8eJw"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://szymanski.studio/#person",
+          "name": "Łukasz Szymański",
+          "url": "https://szymanski.studio",
+          "jobTitle": ["Musician", "Programmer", "Filmmaker"],
+          "sameAs": [
+            "https://github.com/Lukasz-Szymanski",
+            "https://www.linkedin.com/in/lukasz-szymanski94/",
+            "https://www.instagram.com/szymanski_studio/",
+            "https://www.youtube.com/channel/UCKNDC6ymPscd0PPdEGr8eJw"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://szymanski.studio/#website",
+          "url": "https://szymanski.studio",
+          "name": "Łukasz Szymański | szymanski.studio",
+          "description": "Portfolio of Łukasz Szymański: Classical Musician, Programmer, and Filmmaker.",
+          "publisher": { "@id": "https://szymanski.studio/#person" },
+          "inLanguage": ["en", "pl"]
+        }
       ]
     })} />
     
