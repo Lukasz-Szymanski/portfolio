@@ -33,13 +33,13 @@ const displayTitle = title === 'Home' ? 'Łukasz Szymański | szymanski.studio' 
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={displayTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL('/images/og-image.jpg', Astro.url)} />
+    <meta property="og:image" content={new URL('/screenshot.png', Astro.url)} />
     
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={displayTitle} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL('/images/og-image.jpg', Astro.url)} />
+    <meta property="twitter:image" content={new URL('/screenshot.png', Astro.url)} />
 
     <link rel="canonical" href={Astro.url.href.replace(/\/$/, '')} />
     <link rel="alternate" href={new URL(route, Astro.site || Astro.url.origin).href.replace(/\/$/, '')} hreflang="en" />
