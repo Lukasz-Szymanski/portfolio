@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Code, ExternalLink } from '@lucide/astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Git-Sensei | Project" description="Git-Sensei case study - an intelligent commit message generator with secrets protection and Jira/GitHub integration.">
+  
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full flex items-center justify-center py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16 items-center w-full min-w-0 bg-black/20 backdrop-blur-sm p-6 md:p-10 lg:p-12 rounded-[2rem] border border-white/5">
+      
+      <!-- Left Column: Title -->
+      <div class="space-y-4 min-w-0 flex flex-col justify-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 w-fit">
+          <Code class="h-3.5 w-3.5" />
+          <span class="text-2xs font-semibold uppercase tracking-widest">Case Study</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300">
+          Git-Sensei
+        </h1>
+        <p class="text-zinc-400 text-sm max-w-sm leading-relaxed pt-2">
+          An intelligent CLI assistant that automates commit messages, protects secrets, and links code to Jira tasks.
+        </p>
+      </div>
+
+      <!-- Right Column: Bento Boxes -->
+      <div class="flex flex-col gap-4 sm:gap-6 font-sans min-w-0">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <!-- Box 1: Problem -->
+          <div class="bg-zinc-950/50 border border-white/5 rounded-2xl p-6 space-y-3 hover:border-white/10 transition-colors">
+            <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Problem</h2>
+            <p class="text-sm text-zinc-300 leading-relaxed">
+              Writing good commit messages is often delayed or rushed. Poor descriptions drastically hinder the team's ability to understand the project history later on.
+            </p>
+          </div>
+
+          <!-- Box 2: Solution -->
+          <div class="bg-zinc-950/50 border border-white/5 rounded-2xl p-6 space-y-3 hover:border-white/10 transition-colors">
+            <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Solution</h2>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-2">A CLI tool (Python + LLM API) featuring:</p>
+            <ul class="list-disc pl-4 space-y-1.5 text-xs text-zinc-400">
+              <li><strong class="text-blue-300">Secrets Shield</strong> — blocking sensitive data (Shannon Entropy)</li>
+              <li><strong class="text-white">Smart Context</strong> — automatic link to Jira/GitHub</li>
+              <li><strong class="text-white">Branch Detection</strong> — intelligent review</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Box 3: What It Shows -->
+        <div class="bg-zinc-950/50 border border-white/5 rounded-2xl p-6 space-y-3 hover:border-white/10 transition-colors">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">Approach & Takeaways</h2>
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            This project was born out of a real need—I use it daily. It demonstrates my approach to AI: instead of toy demos, I build complete tools focused on security and seamless integration into a real developer workflow.
+          </p>
+        </div>
+
+        <!-- Footer: Tags & Button -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+          <div class="flex flex-wrap gap-2">
+            {['Python', 'LLM APIs', 'Git', 'Shannon Entropy'].map(tech => (
+              <span class="px-2.5 py-1 text-2xs font-medium rounded-full bg-blue-950/30 text-blue-300 border border-blue-500/20">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <a href="https://github.com/Lukasz-Szymanski/git_sensei" target="_blank" rel="noopener noreferrer" class="group relative shrink-0 inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 bg-blue-600/20 border border-blue-500/30 rounded-full hover:bg-blue-500/30 hover:border-blue-400/50 hover:scale-[1.02] overflow-hidden">
+            <span class="relative z-10 flex items-center gap-2">View Source <ExternalLink class="w-3.5 h-3.5" /></span>
+            <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>

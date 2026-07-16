@@ -12,6 +12,7 @@ const featuredProjects = [
     description: t('project.1.desc'),
     tech: ["Python", "AI Integration", "CLI", "Shannon Entropy"],
     github: "https://github.com/Lukasz-Szymanski/git_sensei",
+    link: lang === 'pl' ? '/pl/projects/git-sensei' : '/projects/git-sensei',
     icon: Code
   },
   {
@@ -114,23 +115,34 @@ const featuredProjects = [
         return (
           <div class="group relative bg-[var(--color-bg-card)] border border-[var(--color-border-apple)]/30 hover:border-blue-500/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
             
-            <!-- Subtle background glow on hover -->
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            {/* Wirtualny link obejmujący całą kartę - tylko jeśli istnieje podstrona */}
+            {proj.link && (
+              <a href={proj.link} class="absolute inset-0 z-10" aria-label={`Read case study about ${proj.title}`}></a>
+            )}
 
-            <div class="space-y-4 relative z-10">
+            <!-- Subtle background glow on hover -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
+
+            <div class="space-y-4 relative z-10 pointer-events-none">
               <div class="flex justify-between items-start">
                 <div class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
                   <Icon class="h-4 w-4" />
                 </div>
-                <a href={proj.github} target="_blank" rel="noopener noreferrer" aria-label="View repository" class="p-1 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+                <a href={proj.github} target="_blank" rel="noopener noreferrer" aria-label="View repository" class="p-1 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors relative z-20 pointer-events-auto">
                   <ExternalLink class="h-3.5 w-3.5" />
                 </a>
               </div>
-              <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors leading-snug">{proj.title}</h3>
+              <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors leading-snug">
+                {!proj.link ? (
+                  <a href={proj.github} target="_blank" rel="noopener noreferrer" class="before:absolute before:inset-0 before:z-0 pointer-events-auto">{proj.title}</a>
+                ) : (
+                  proj.title
+                )}
+              </h3>
               <p class="text-2xs text-[var(--color-text-secondary)] leading-relaxed">{proj.description}</p>
             </div>
             
-            <div class="flex flex-wrap gap-1.5 pt-6 mt-auto relative z-10">
+            <div class="flex flex-wrap gap-1.5 pt-6 mt-auto relative z-10 pointer-events-none">
               {proj.tech.map(tech => (
                 <span class="px-2 py-0.5 text-2xs font-medium rounded-full bg-blue-950/20 text-blue-400 border border-blue-500/10">
                   {tech}
