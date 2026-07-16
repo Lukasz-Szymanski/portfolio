@@ -182,7 +182,7 @@ export const ui = {
     'about.p2_6': 'Krzysztof Jakowicz',
     'about.p2_7': '. To doświadczenie ukształtowało we mnie dążenie do najwyższych standardów i udowodniło mi wagę międzynarodowego poziomu współpracy.',
     'about.h2': 'Doświadczenie sceniczne',
-    'about.p3': 'Jako muzyk orkiestrowy współpracowałem z instytucjami takimi jak Filharmonia Gorzowska czy Opera na Zamku, a także koncertowałem zagranicą z orkiestrą The Virtuosos of Split.',
+    'about.p3': 'Jako muzyk orkiestrowy współpracowałem z instytucjami takimi jak Filharmonia Gorzowska czy Opera na Zamku, a także koncertowałem za granicą z orkiestrą The Virtuosos of Split.',
     'about.p4': 'Niezależnie od tego, czy wykonuję trudną symfonię, czy buduję skalowalną architekturę backendową, zasada pozostaje ta sama: wymaga to pełnego zaangażowania, ciągłego rozwoju i głębokiego poczucia odpowiedzialności.',
 
     // Programmer
