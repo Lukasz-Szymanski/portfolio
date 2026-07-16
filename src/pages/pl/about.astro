@@ -1,13 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { Music } from '@lucide/astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Musician" description={t('musician.meta.desc')}>
+<Layout title={t('nav.about')} description={t('about.meta.desc')}>
   
   <section class="max-w-7xl mx-auto px-6 lg:px-12 min-h-[calc(100vh-3.5rem)] w-full flex items-center justify-center py-20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full min-w-0 bg-black/20 backdrop-blur-sm p-8 md:p-16 lg:p-20 rounded-[2.5rem] border border-white/5">
@@ -16,9 +16,9 @@ const t = useTranslations(lang);
       <div class="space-y-4 min-w-0">
         <div class="inline-flex items-center gap-2 text-blue-500">
           <Music class="h-4 w-4" />
-          <span class="text-2xs font-semibold uppercase tracking-widest">{t('musician.tag')}</span>
+          <span class="text-2xs font-semibold uppercase tracking-widest">{t('about.tag')}</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('musician.title')}>
+        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('about.title')}>
         </h1>
       </div>
 
@@ -26,13 +26,13 @@ const t = useTranslations(lang);
       <div class="space-y-8 font-sans min-w-0">
         
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('musician.h1')}</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('about.h1')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              {t('musician.p1')}
+              {t('about.p1')}
             </p>
             <p>
-              {t('musician.p2_1')}<span class="text-white">{t('musician.p2_2')}</span>{t('musician.p2_3')}<span class="text-white">{t('musician.p2_4')}</span>{t('musician.p2_5')}
+              {t('about.p2_1')}<span class="text-white">{t('about.p2_2')}</span>{t('about.p2_3')}<span class="text-white">{t('about.p2_4')}</span>{t('about.p2_5')}
             </p>
           </div>
         </div>
@@ -40,13 +40,13 @@ const t = useTranslations(lang);
         <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
 
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('musician.h2')}</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('about.h2')}</h2>
           <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
             <p>
-              {t('musician.p3')}
+              {t('about.p3')}
             </p>
             <p>
-              {t('musician.p4')}
+              {t('about.p4')}
             </p>
           </div>
         </div>

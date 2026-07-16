@@ -130,9 +130,9 @@ const displayTitle = title === 'Home' ? 'Łukasz Szymański | szymanski.studio' 
         <!-- Desktop Nav (Apple style: small, centered text, clean spacing) -->
         <nav class="hidden md:flex items-center gap-8">
           <a href={lang === 'en' ? '/' : '/pl/'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath === '/' || currentPath === '/pl/') ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.home')}</a>
-          <a href={lang === 'en' ? '/musician' : '/pl/musician'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/musician') || currentPath.endsWith('/musician/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.musician')}</a>
-          <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/programmer') || currentPath.endsWith('/programmer/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.programmer')}</a>
-          <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/filmmaker') || currentPath.endsWith('/filmmaker/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.filmmaker')}</a>
+          <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/programmer') || currentPath.endsWith('/programmer/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.it')}</a>
+          <a href={lang === 'en' ? '/audio-video' : '/pl/audio-video'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/audio-video') || currentPath.endsWith('/audio-video/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.audiovideo')}</a>
+          <a href={lang === 'en' ? '/about' : '/pl/about'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/about') || currentPath.endsWith('/about/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.about')}</a>
 
           <a href={lang === 'en' ? '/contact' : '/pl/contact'} class={`text-xs font-normal transition-colors duration-200 ${(currentPath.endsWith('/contact') || currentPath.endsWith('/contact/')) ? 'text-white font-medium' : 'text-[var(--color-text-secondary)] hover:text-white'}`}>{t('nav.contact')}</a>
           
@@ -156,9 +156,9 @@ const displayTitle = title === 'Home' ? 'Łukasz Szymański | szymanski.studio' 
       <div id="mobile-menu" class="hidden md:hidden bg-[var(--color-bg-dark)]/95 border-b border-[var(--color-border-apple)]/30 backdrop-blur-2xl">
         <div class="px-6 py-4 flex flex-col gap-3">
           <a href={lang === 'en' ? '/' : '/pl/'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.home')}</a>
-          <a href={lang === 'en' ? '/musician' : '/pl/musician'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.musician')}</a>
-          <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.programmer')}</a>
-          <a href={lang === 'en' ? '/filmmaker' : '/pl/filmmaker'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.filmmaker')}</a>
+          <a href={lang === 'en' ? '/programmer' : '/pl/programmer'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.it')}</a>
+          <a href={lang === 'en' ? '/audio-video' : '/pl/audio-video'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.audiovideo')}</a>
+          <a href={lang === 'en' ? '/about' : '/pl/about'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.about')}</a>
 
           <a href={lang === 'en' ? '/contact' : '/pl/contact'} class="mobile-nav-link py-1.5 text-sm text-[var(--color-text-secondary)] hover:text-white">{t('nav.contact')}</a>
           
