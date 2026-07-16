@@ -51,34 +51,19 @@ const t = useTranslations(lang);
           </div>
         </a>
 
-        <!-- Right Column Cards -->
-        <div class="grid grid-cols-1 gap-4 md:gap-6 flex-col">
-          <a href={`/${lang === 'pl' ? 'pl/' : ''}about`} class="bento-card group relative bg-zinc-950/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
-            <div class="glow-effect"></div>
-            <div class="relative z-10 flex flex-col h-full justify-between">
-              <div class="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 w-fit">
-                <Music class="w-5 h-5" />
-              </div>
-              <div class="mt-6">
-                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">{t('index.bento.music.title')}</h3>
-                <p class="text-sm text-zinc-400">{t('index.bento.music.desc')}</p>
-              </div>
+        <!-- Audio-Video Card -->
+        <a href={`/${lang === 'pl' ? 'pl/' : ''}audio-video`} class="bento-card group md:col-span-1 relative bg-zinc-950/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
+          <div class="glow-effect"></div>
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 w-fit">
+              <Film class="w-5 h-5" />
             </div>
-          </a>
-
-          <a href={`/${lang === 'pl' ? 'pl/' : ''}audio-video`} class="bento-card group relative bg-zinc-950/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
-            <div class="glow-effect"></div>
-            <div class="relative z-10 flex flex-col h-full justify-between">
-              <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 w-fit">
-                <Film class="w-5 h-5" />
-              </div>
-              <div class="mt-6">
-                <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">{t('index.bento.film.title')}</h3>
-                <p class="text-sm text-zinc-400">{t('index.bento.film.desc')}</p>
-              </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">{t('index.bento.film.title')}</h3>
+              <p class="text-sm text-zinc-400">{t('index.bento.film.desc')}</p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
 
     </div>
