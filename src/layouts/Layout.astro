@@ -6,9 +6,10 @@ interface Props {
   title: string;
   description?: string;
   hideScroll?: boolean;
+  hideFooter?: boolean;
 }
 
-const { title, description = "Welcome to Łukasz Szymański's portfolio website! I am a classical musician, programmer, and filmmaker.", hideScroll = false } = Astro.props;
+const { title, description = "Welcome to Łukasz Szymański's portfolio website! I am a classical musician, programmer, and filmmaker.", hideScroll = false, hideFooter = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -176,7 +177,14 @@ const displayTitle = title === 'Home' ? 'Łukasz Szymański | szymanski.studio' 
       <slot />
     </main>
 
-    <!-- Footer Removed -->
+    <!-- Footer -->
+    {!hideFooter && (
+      <footer class="w-full text-center pb-6 pt-10 mt-auto fade-in z-10">
+        <p class="text-[10px] text-zinc-600 uppercase tracking-widest">
+          Copyright &copy; {new Date().getFullYear()} {t('footer.copyright')}
+        </p>
+      </footer>
+    )}
 
     <!-- Interactive Scripts -->
     <script>
