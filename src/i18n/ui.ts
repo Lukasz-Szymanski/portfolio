@@ -125,6 +125,8 @@ export const ui = {
     'project.5.desc': 'A modern, high-performance, and multilingual platform for the International Beethoven Society built with Astro.',
     'project.6.title': 'Young Ludwig',
     'project.6.desc': 'The official multi-language web application for the Young Ludwig Youth Music Competition.',
+    'project.7.title': 'Dr Bieleninik',
+    'project.7.desc': 'Modern website built for a client using Next.js, React, and Tailwind CSS.',
 
     // Videos
     'video.1.title': 'Brotnar Borgir',
@@ -256,6 +258,8 @@ export const ui = {
     'project.5.desc': 'Nowoczesna, wysokowydajna i wielojęzyczna platforma dla Międzynarodowego Towarzystwa Beethovenowskiego.',
     'project.6.title': 'Young Ludwig',
     'project.6.desc': 'Oficjalna wielojęzyczna aplikacja webowa dla Młodzieżowego Konkursu Muzycznego Young Ludwig.',
+    'project.7.title': 'Dr Bieleninik',
+    'project.7.desc': 'Nowoczesna strona internetowa stworzona dla klienta przy użyciu Next.js, React oraz Tailwind CSS.',
 
     // Videos
     'video.1.title': 'Brotnar Borgir',
