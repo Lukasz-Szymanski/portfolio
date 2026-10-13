@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Film, PlayCircle, Music } from '@lucide/astro';
+import { Film, PlayCircle, Music, Mic, Headphones, ArrowRight, CheckCircle2 } from '@lucide/astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -49,36 +49,62 @@ const soundtracks = [
 ];
 ---
 
-<Layout title={t('nav.audiovideo')} description={t('audiovideo.meta.desc')}>
+<Layout title="Audio / Video" description={t('av_biz.meta.desc')}>
   
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 min-h-[calc(100vh-3.5rem)] w-full flex items-center justify-center py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full min-w-0 bg-black/20 backdrop-blur-sm p-8 md:p-16 lg:p-20 rounded-[2.5rem] border border-white/5">
+  <!-- HERO BIZNESOWE DLA REŻYSERÓW/PRODUCENTÓW -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 min-h-[70vh] w-full flex items-center justify-center pt-24 pb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full min-w-0 bg-zinc-950/40 backdrop-blur-xl p-8 md:p-12 lg:p-16 rounded-[2.5rem] border border-white/10">
       
-      <div class="space-y-4 min-w-0">
-        <div class="inline-flex items-center gap-2 text-blue-500">
-          <Film class="h-4 w-4" />
-          <span class="text-2xs font-semibold uppercase tracking-widest">{t('audiovideo.tag')}</span>
+      <div class="space-y-6 min-w-0">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400">
+          <Headphones class="h-4 w-4" />
+          <span class="text-xs font-semibold uppercase tracking-widest">{t('av_biz.tag')}</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('audiovideo.title')}>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-400 break-words">
+          {t('av_biz.hero.title')}
         </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-xl">
+          {t('av_biz.hero.desc')}
+        </p>
+        
+        <div class="flex items-center gap-4 pt-4">
+          <a href="#kontakt-audio" class="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold transition-colors shadow-lg hover:shadow-purple-500/25 flex items-center gap-2">
+            {t('av_biz.hero.cta')} <ArrowRight class="w-4 h-4" />
+          </a>
+          <a href="#portfolio" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold transition-colors hidden sm:inline-flex">
+            {t('av_biz.hero.secondary')}
+          </a>
+        </div>
       </div>
 
-      <div class="space-y-8 font-sans min-w-0">
-        <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('audiovideo.h1')}</h2>
-          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
-            <p>{t('audiovideo.p1')}</p>
-            <p>{t('audiovideo.p2_1')}<span class="text-white whitespace-nowrap">{t('audiovideo.p2_2')}</span>{t('audiovideo.p2_3')}</p>
+      <!-- KORZYŚCI DLA KLIENTA (REŻYSERA/TWÓRCY) -->
+      <div class="space-y-6 font-sans min-w-0 bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-[2rem] border border-white/10 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent pointer-events-none"></div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-purple-400 mb-6 relative z-10">{t('av_biz.services.title')}</h3>
+        
+        <div class="space-y-4 relative z-10">
+          <div class="flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 shrink-0"><Music class="w-5 h-5"/></div>
+            <div>
+              <h4 class="text-white font-semibold">{t('av_biz.services.1.title')}</h4>
+              <p class="text-sm text-gray-300 mt-1">{t('av_biz.services.1.desc')}</p>
+            </div>
           </div>
-        </div>
 
-        <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
-
-        <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('audiovideo.h2')}</h2>
-          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
-            <p>{t('audiovideo.p3_1')}<span class="text-white">{t('audiovideo.p3_2')}</span>{t('audiovideo.p3_3')}</p>
-            <p>{t('audiovideo.p4')}</p>
+          <div class="flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400 shrink-0"><Film class="w-5 h-5"/></div>
+            <div>
+              <h4 class="text-white font-semibold">{t('av_biz.services.2.title')}</h4>
+              <p class="text-sm text-gray-300 mt-1">{t('av_biz.services.2.desc')}</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0"><Mic class="w-5 h-5"/></div>
+            <div>
+              <h4 class="text-white font-semibold">{t('av_biz.services.3.title')}</h4>
+              <p class="text-sm text-gray-300 mt-1">{t('av_biz.services.3.desc')}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -86,12 +112,52 @@ const soundtracks = [
     </div>
   </section>
 
+  <div id="portfolio"></div>
+
+  <!-- Audio/Soundtrack Section (PRIORYTET) -->
+  <section class="max-w-4xl mx-auto px-6 pb-12 w-full flex flex-col space-y-8 mt-10">
+    <div class="flex items-center gap-2">
+      <Music class="h-6 w-6 text-purple-400" />
+      <h2 class="text-2xl font-bold text-white tracking-tight">Muzyka Filmowa (Film Scoring)</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      {soundtracks.map(track => {
+        const Icon = track.icon;
+        return (
+          <div class="group relative bg-[var(--color-bg-card)] border border-[var(--color-border-apple)]/30 hover:border-purple-500/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/10 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div class="space-y-4 relative z-10">
+              <div class="flex justify-between items-start">
+                <div class="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 shadow-inner">
+                  <Icon class="h-5 w-5" />
+                </div>
+                <span class="text-xs font-mono text-zinc-500 bg-black/40 px-2.5 py-1 rounded-md border border-white/5">{track.year}</span>
+              </div>
+              <div>
+                <h2 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors leading-snug mb-1">{track.title}</h2>
+                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wide">Dir. {track.director}</p>
+              </div>
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">{track.description}</p>
+            </div>
+            <div class="pt-6 mt-auto relative z-10 flex items-center justify-between">
+              <span class="px-2.5 py-1 text-2xs font-semibold rounded-full bg-white/5 text-zinc-300 border border-white/10">{track.genre}</span>
+              <a href={track.url || "#"} target={track.url ? "_blank" : undefined} rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors">
+                <PlayCircle class="h-4 w-4" /> Posłuchaj na YouTube
+              </a>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </section>
+
   <!-- Videos Section -->
-  <section class="max-w-4xl mx-auto px-6 pb-12 w-full flex flex-col space-y-8">
+  <section class="max-w-4xl mx-auto px-6 pb-24 w-full flex flex-col space-y-8">
     <div class="h-[1px] w-full bg-[var(--color-border-apple)]/20 mb-4"></div>
     <div class="flex items-center gap-2">
-      <Film class="h-5 w-5 text-blue-400" />
-      <h2 class="text-xl font-semibold text-white tracking-tight">Portfolio Wideo (Video Editing)</h2>
+      <Film class="h-6 w-6 text-blue-400" />
+      <h2 class="text-2xl font-bold text-white tracking-tight">Portfolio Wideo (Video Editing)</h2>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
@@ -116,7 +182,7 @@ const soundtracks = [
             <div class="pt-6 mt-auto relative z-10 flex items-center justify-between">
               <span class="px-2.5 py-1 text-2xs font-semibold rounded-full bg-white/5 text-zinc-300 border border-white/10">{video.genre}</span>
               <a href={`https://youtu.be/${video.id}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors">
-                <PlayCircle class="h-4 w-4" /> {t('audiovideo.watch')}
+                <PlayCircle class="h-4 w-4" /> Zobacz wideo
               </a>
             </div>
           </div>
@@ -125,41 +191,27 @@ const soundtracks = [
     </div>
   </section>
 
-  <!-- Audio/Soundtrack Section -->
-  <section class="max-w-4xl mx-auto px-6 pb-24 w-full flex flex-col space-y-8">
-    <div class="flex items-center gap-2">
-      <Music class="h-5 w-5 text-blue-400" />
-      <h2 class="text-xl font-semibold text-white tracking-tight">Muzyka Filmowa (Film Scoring)</h2>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-      {soundtracks.map(track => {
-        const Icon = track.icon;
-        return (
-          <div class="group relative bg-[var(--color-bg-card)] border border-[var(--color-border-apple)]/30 hover:border-blue-500/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div class="space-y-4 relative z-10">
-              <div class="flex justify-between items-start">
-                <div class="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 shadow-inner">
-                  <Icon class="h-5 w-5" />
-                </div>
-                <span class="text-xs font-mono text-zinc-500 bg-black/40 px-2.5 py-1 rounded-md border border-white/5">{track.year}</span>
-              </div>
-              <div>
-                <h2 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug mb-1">{track.title}</h2>
-                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wide">Dir. {track.director}</p>
-              </div>
-              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">{track.description}</p>
-            </div>
-            <div class="pt-6 mt-auto relative z-10 flex items-center justify-between">
-              <span class="px-2.5 py-1 text-2xs font-semibold rounded-full bg-white/5 text-zinc-300 border border-white/10">{track.genre}</span>
-              <a href={track.url || "#"} target={track.url ? "_blank" : undefined} rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors">
-                <PlayCircle class="h-4 w-4" /> {t('filmmusic.listen')}
-              </a>
-            </div>
-          </div>
-        )
-      })}
+  <!-- CTA / LEJEK DLA AUDIO-VIDEO -->
+  <section id="kontakt-audio" class="max-w-4xl mx-auto px-6 pb-32 w-full">
+    <div class="bg-gradient-to-br from-purple-950/40 via-zinc-950/60 to-black/80 backdrop-blur-xl border border-purple-500/20 rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 -ml-20 -mt-20 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+      
+      <div class="relative z-10 space-y-6">
+        <h2 class="text-3xl font-bold text-white tracking-tight">{t('av_biz.cta.title')}</h2>
+        <p class="text-base text-purple-200 max-w-xl mx-auto">
+          {t('av_biz.cta.desc')}
+        </p>
+        
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:kontakt@szymanski.studio" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold transition-all shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] flex items-center justify-center gap-2">
+            {t('av_biz.cta.email')} <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-6 flex items-center justify-center gap-2">
+          <CheckCircle2 class="w-4 h-4 text-emerald-500" /> {t('av_biz.cta.note')}
+        </p>
+      </div>
     </div>
   </section>
 

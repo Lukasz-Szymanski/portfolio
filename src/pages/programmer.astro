@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Code, Globe, Sparkles, ExternalLink, Cpu, Music } from '@lucide/astro';
+import { Code, Globe, Sparkles, ExternalLink, Cpu, Music, Briefcase, Zap, CheckCircle2, ArrowRight } from '@lucide/astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// Projekty z tłumaczeniami
 const featuredProjects = [
   {
     title: t('project.1.title'),
@@ -60,98 +61,101 @@ const featuredProjects = [
 ];
 ---
 
-<Layout title="Programmer" description={t('programmer.meta.desc')}>
+<Layout title="Programmer" description={t('prog_biz.meta.desc')}>
   
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 min-h-[calc(100vh-3.5rem)] w-full flex items-center justify-center py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full min-w-0 bg-black/20 backdrop-blur-sm p-8 md:p-16 lg:p-20 rounded-[2.5rem] border border-white/5">
+  <!-- HERO BIZNESOWE -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 min-h-[70vh] w-full flex items-center justify-center pt-24 pb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full min-w-0 bg-zinc-950/40 backdrop-blur-xl p-8 md:p-12 lg:p-16 rounded-[2.5rem] border border-white/10">
       
-      <!-- Left Column: Huge Apple Slogan with Gradient -->
-      <div class="space-y-4 min-w-0">
-        <div class="inline-flex items-center gap-2 text-blue-500">
-          <Code class="h-4 w-4" />
-          <span class="text-2xs font-semibold uppercase tracking-widest">{t('programmer.tag')}</span>
+      <div class="space-y-6 min-w-0">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400">
+          <Briefcase class="h-4 w-4" />
+          <span class="text-xs font-semibold uppercase tracking-widest">{t('prog_biz.tag')}</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-300 break-words" set:html={t('programmer.title')}>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-100 to-zinc-400 break-words">
+          {t('prog_biz.hero.title')}
         </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-xl">
+          {t('prog_biz.hero.desc')}
+        </p>
+        
+        <div class="flex items-center gap-4 pt-4">
+          <a href="#kontakt" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors shadow-lg hover:shadow-blue-500/25 flex items-center gap-2">
+            {t('prog_biz.hero.cta')} <ArrowRight class="w-4 h-4" />
+          </a>
+          <a href="#projekty" class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold transition-colors hidden sm:inline-flex">
+            {t('prog_biz.hero.secondary')}
+          </a>
+        </div>
       </div>
 
-      <!-- Right Column: Biography Content in Editorial style -->
-      <div class="space-y-8 font-sans min-w-0">
+      <!-- KORZYŚCI DLA KLIENTA -->
+      <div class="space-y-6 font-sans min-w-0 bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-[2rem] border border-white/10">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-blue-400 mb-6">{t('prog_biz.services.title')}</h3>
         
         <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('programmer.h1')}</h2>
-          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
-            <p>
-              {t('programmer.p1')}
-            </p>
-            <p>
-              {t('programmer.p2_1')}<span class="text-white whitespace-nowrap">{t('programmer.p2_2')}</span>{t('programmer.p2_3')}<span class="text-white whitespace-nowrap">{t('programmer.p2_4')}</span>{t('programmer.p2_5')}
-            </p>
+          <div class="flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0"><Globe class="w-5 h-5"/></div>
+            <div>
+              <h4 class="text-white font-semibold">{t('prog_biz.services.1.title')}</h4>
+              <p class="text-sm text-gray-300 mt-1">{t('prog_biz.services.1.desc')}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400 shrink-0"><Zap class="w-5 h-5"/></div>
+            <div>
+              <h4 class="text-white font-semibold">{t('prog_biz.services.2.title')}</h4>
+              <p class="text-sm text-gray-300 mt-1">{t('prog_biz.services.2.desc')}</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 shrink-0"><Cpu class="w-5 h-5"/></div>
+            <div>
+              <h4 class="text-white font-semibold">{t('prog_biz.services.3.title')}</h4>
+              <p class="text-sm text-gray-300 mt-1">{t('prog_biz.services.3.desc')}</p>
+            </div>
           </div>
         </div>
-
-        <div class="h-[1px] bg-[var(--color-border-apple)]/20"></div>
-
-        <div class="space-y-4">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-blue-400">{t('programmer.h2')}</h2>
-          <div class="space-y-4 text-base text-[var(--color-text-secondary)] leading-relaxed text-justify">
-            <p>
-              {t('programmer.p3_1')}<span class="text-white">{t('programmer.p3_2')}</span>{t('programmer.p3_3')}
-            </p>
-            <p>
-              {t('programmer.p4')}
-            </p>
-          </div>
-        </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- Projects Section directly on Programmer page -->
-  <section class="max-w-6xl mx-auto px-6 pb-20 w-full flex flex-col space-y-8">
-    <div class="h-[1px] w-full bg-[var(--color-border-apple)]/20 mb-4"></div>
+  <!-- PROJEKTY -->
+  <section id="projekty" class="max-w-6xl mx-auto px-6 pb-24 w-full flex flex-col space-y-8">
+    <div class="h-[1px] w-full bg-white/5 mb-4"></div>
     <div class="flex items-center gap-2">
-      <h2 class="text-xl font-semibold text-white tracking-tight">{t('projects.title')}</h2>
+      <h2 class="text-2xl font-bold text-white tracking-tight">{t('prog_biz.projects.title')}</h2>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full select-none">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full select-none">
       {featuredProjects.map(proj => {
         const Icon = proj.icon;
         return (
           <div class="group relative bg-[var(--color-bg-card)] border border-[var(--color-border-apple)]/30 hover:border-blue-500/40 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
-            
-            {/* Wirtualny link obejmujący całą kartę - tylko jeśli istnieje podstrona */}
             {proj.link && (
-              <a href={proj.link} class="absolute inset-0 z-10" aria-label={`Read case study about ${proj.title}`}></a>
+              <a href={proj.link} class="absolute inset-0 z-10" aria-label={`Zobacz case study ${proj.title}`}></a>
             )}
-
-            <!-- Subtle background glow on hover -->
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"></div>
-
             <div class="space-y-4 relative z-10 pointer-events-none">
               <div class="flex justify-between items-start">
                 <div class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
                   <Icon class="h-4 w-4" />
                 </div>
-                <a href={proj.github} target="_blank" rel="noopener noreferrer" aria-label="View repository" class="p-1 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors relative z-20 pointer-events-auto">
-                  <ExternalLink class="h-3.5 w-3.5" />
+                <a href={proj.github} target="_blank" rel="noopener noreferrer" class="p-1 text-gray-400 hover:text-white relative z-20 pointer-events-auto">
+                  <ExternalLink class="h-4 w-4" />
                 </a>
               </div>
-              <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors leading-snug">
-                {!proj.link ? (
-                  <a href={proj.github} target="_blank" rel="noopener noreferrer" class="before:absolute before:inset-0 before:z-0 pointer-events-auto">{proj.title}</a>
-                ) : (
-                  proj.title
-                )}
+              <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
+                {proj.title}
               </h3>
-              <p class="text-2xs text-[var(--color-text-secondary)] leading-relaxed">{proj.description}</p>
+              <p class="text-sm text-gray-400 leading-relaxed">{proj.description}</p>
             </div>
             
-            <div class="flex flex-wrap gap-1.5 pt-6 mt-auto relative z-10 pointer-events-none">
+            <div class="flex flex-wrap gap-2 pt-6 mt-auto relative z-10 pointer-events-none">
               {proj.tech.map(tech => (
-                <span class="px-2 py-0.5 text-2xs font-medium rounded-full bg-blue-950/20 text-blue-400 border border-blue-500/10">
+                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/5 text-gray-300 border border-white/10">
                   {tech}
                 </span>
               ))}
@@ -159,6 +163,33 @@ const featuredProjects = [
           </div>
         )
       })}
+    </div>
+  </section>
+
+  <!-- CTA / LEJEK -->
+  <section id="kontakt" class="max-w-4xl mx-auto px-6 pb-32 w-full">
+    <div class="bg-gradient-to-br from-blue-950/40 via-zinc-950/60 to-black/80 backdrop-blur-xl border border-blue-500/20 rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden">
+      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+      
+      <div class="relative z-10 space-y-6">
+        <h2 class="text-3xl font-bold text-white tracking-tight">{t('prog_biz.cta.title')}</h2>
+        <p class="text-base text-blue-200 max-w-xl mx-auto">
+          {t('prog_biz.cta.desc')}
+        </p>
+        
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:kontakt@szymanski.studio" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] flex items-center justify-center gap-2">
+            {t('prog_biz.cta.email')} <ArrowRight class="w-5 h-5" />
+          </a>
+          <a href="https://linkedin.com/in/twoj-profil" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors border border-white/10">
+            {t('prog_biz.cta.linkedin')}
+          </a>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-6 flex items-center justify-center gap-2">
+          <CheckCircle2 class="w-4 h-4 text-emerald-500" /> {t('prog_biz.cta.note')}
+        </p>
+      </div>
     </div>
   </section>
 
