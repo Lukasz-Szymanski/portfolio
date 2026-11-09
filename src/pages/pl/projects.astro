@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Cpu, Music, Code, Globe, ExternalLink, Sparkles } from '@lucide/astro';
+import { Cpu, Music, Code, Globe, ExternalLink, Sparkles, Shield } from '@lucide/astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -9,6 +9,13 @@ const t = useTranslations(lang);
 
 const featuredProjects = [
   {
+    title: t('project.0.title'),
+    description: t('project.0.desc'),
+    tech: ["Python", "Linux Daemon", "TUI (Rich)", "Security", "nftables"],
+    github: "https://github.com/Lukasz-Szymanski/net-sentry",
+    icon: Shield
+  },
+  {
     title: t('project.1.title'),
     description: t('project.1.desc'),
     tech: ["Python", "AI Integration", "CLI", "Shannon Entropy"],
@@ -16,10 +23,17 @@ const featuredProjects = [
     icon: Code
   },
   {
-    title: t('project.2.title'),
-    description: t('project.2.desc'),
-    tech: ["Python", "TCP Sockets", "Threading", "JSON"],
-    github: "https://gitlab.com/Lukasz-Szymanski/client_server",
+    title: t('project.4.title'),
+    description: t('project.4.desc'),
+    tech: ["Python", "FastAPI", "React", "SQLite", "LLM API"],
+    github: "https://github.com/Lukasz-Szymanski/jarvis-mark-1",
+    icon: Cpu
+  },
+  {
+    title: t('project.7.title'),
+    description: t('project.7.desc'),
+    tech: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+    github: "https://www.drbieleninik.pl/",
     icon: Globe
   },
   {
@@ -28,13 +42,6 @@ const featuredProjects = [
     tech: ["Astro", "TypeScript", "Tailwind CSS", "i18n"],
     github: "https://github.com/Lukasz-Szymanski/portfolio",
     icon: Sparkles
-  },
-  {
-    title: t('project.4.title'),
-    description: t('project.4.desc'),
-    tech: ["Python", "FastAPI", "Streamlit", "LLM API"],
-    github: "https://github.com/Lukasz-Szymanski/jarvis_mark_1",
-    icon: Cpu
   },
   {
     title: t('project.5.title'),

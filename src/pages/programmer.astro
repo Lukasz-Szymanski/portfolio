@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Code, Globe, Sparkles, ExternalLink, Cpu, Music, Briefcase, Zap, CheckCircle2, ArrowRight } from '@lucide/astro';
+import { Code, Globe, Sparkles, ExternalLink, Cpu, Music, Briefcase, Zap, CheckCircle2, ArrowRight, Shield } from '@lucide/astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -8,6 +8,13 @@ const t = useTranslations(lang);
 
 // Projekty z tłumaczeniami
 const featuredProjects = [
+  {
+    title: t('project.0.title'),
+    description: t('project.0.desc'),
+    tech: ["Python", "Linux Daemon", "TUI (Rich)", "Security", "nftables"],
+    github: "https://github.com/Lukasz-Szymanski/net-sentry",
+    icon: Shield
+  },
   {
     title: t('project.1.title'),
     description: t('project.1.desc'),
@@ -17,10 +24,18 @@ const featuredProjects = [
     icon: Code
   },
   {
-    title: t('project.2.title'),
-    description: t('project.2.desc'),
-    tech: ["Python", "TCP Sockets", "Threading", "JSON"],
-    github: "https://gitlab.com/Lukasz-Szymanski/client_server",
+    title: t('project.4.title'),
+    description: t('project.4.desc'),
+    tech: ["Python", "FastAPI", "React", "SQLite", "LLM API"],
+    github: "https://github.com/Lukasz-Szymanski/jarvis-mark-1",
+    link: lang === 'pl' ? '/pl/projects/jarvis' : '/projects/jarvis',
+    icon: Cpu
+  },
+  {
+    title: t('project.7.title'),
+    description: t('project.7.desc'),
+    tech: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+    github: "https://www.drbieleninik.pl/",
     icon: Globe
   },
   {
@@ -29,13 +44,6 @@ const featuredProjects = [
     tech: ["Astro", "TypeScript", "Tailwind CSS", "i18n"],
     github: "https://github.com/Lukasz-Szymanski/portfolio",
     icon: Sparkles
-  },
-  {
-    title: t('project.4.title'),
-    description: t('project.4.desc'),
-    tech: ["Python", "FastAPI", "Streamlit", "LLM API"],
-    github: "https://github.com/Lukasz-Szymanski/jarvis-mark-1",
-    icon: Cpu
   },
   {
     title: t('project.5.title'),
@@ -50,13 +58,6 @@ const featuredProjects = [
     tech: ["Astro", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/Lukasz-Szymanski/Young_Ludwig",
     icon: Music
-  },
-  {
-    title: t('project.7.title'),
-    description: t('project.7.desc'),
-    tech: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
-    github: "https://www.drbieleninik.pl/",
-    icon: Globe
   }
 ];
 ---
