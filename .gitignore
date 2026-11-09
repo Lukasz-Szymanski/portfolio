@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # notes
 strategia_studio.md
+AGENTS.md
+CLAUDE.md
+.claude/
+.agents/
